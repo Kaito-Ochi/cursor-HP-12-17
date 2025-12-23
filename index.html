@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Hub Inc. - Corporate Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Orbitron:wght@400;500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- スプラッシュスクリーン -->
+    <div id="splash" class="splash">
+        <div class="splash-content">
+            <div class="splash-logo">
+                <img src="会社ロゴ　白文字.png" alt="Edge Hub Logo" class="splash-logo-img">
+            </div>
+            <div class="splash-text">
+                <span class="splash-letter">E</span>
+                <span class="splash-letter">d</span>
+                <span class="splash-letter">g</span>
+                <span class="splash-letter">e</span>
+                <span class="splash-space"></span>
+                <span class="splash-letter">H</span>
+                <span class="splash-letter">u</span>
+                <span class="splash-letter">b</span>
+                <span class="splash-space"></span>
+                <span class="splash-letter">I</span>
+                <span class="splash-letter">n</span>
+                <span class="splash-letter">c</span>
+                <span class="splash-letter">.</span>
+            </div>
+            <div class="splash-loader">
+                <div class="loader-bar"></div>
+                <div class="loader-rocket">
+                    <video autoplay loop muted playsinline class="rocket-video" preload="auto">
+                        <source src="Space%20Rocket_01_Blue.webm" type="video/webm">
+                        <source src="Space%20Rocket_01_Blue_1.mov" type='video/mp4; codecs="hvc1"'>
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="splash-stars"></div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div id="main-content" class="main-content hidden">
+        <!-- グローバル流れ星 -->
+        <div class="global-shooting-stars">
+            <div class="shooting-star ss-1"></div>
+            <div class="shooting-star ss-2"></div>
+            <div class="shooting-star ss-3"></div>
+            <div class="shooting-star ss-4"></div>
+            <div class="shooting-star ss-5"></div>
+            <div class="shooting-star ss-6"></div>
+        </div>
+        
+        <!-- ナビゲーション -->
+        <nav class="nav">
+            <div class="nav-logo">
+                <img src="会社ロゴ　白文字.png" alt="Edge Hub" class="nav-logo-img">
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="#hero">TOP</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="company.html">COMPANY</a>
+                <a href="#service">SERVICE</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+        </nav>
+
+        <!-- ヒーローセクション -->
+        <section id="hero" class="hero">
+            <div class="hero-bg">
+                <div class="stars-layer stars-1"></div>
+                <div class="stars-layer stars-2"></div>
+                <div class="stars-layer stars-3"></div>
+                <div class="nebula"></div>
+            </div>
+            
+            <!-- 中央のペンローズ三角形 -->
+            <div class="penrose-container">
+                <img src="ペンローズ背景透過.png" alt="Penrose Triangle" class="penrose-image">
+                <div class="penrose-glow"></div>
+            </div>
+            
+            <!-- 背景の小惑星 -->
+            <div class="hero-planets">
+                <div class="hero-planet planet-1"></div>
+                <div class="hero-planet planet-2"></div>
+                <div class="hero-planet planet-3"></div>
+                <div class="hero-planet planet-4"></div>
+            </div>
+            
+            <!-- 右上寄りのコンテンツ -->
+            <div class="hero-content">
+                <p class="hero-subtitle">Corporate Site</p>
+                <h1 class="hero-title hero-title-nowrap">
+                    <span class="title-line">母集団形成から、</span>
+                    <span class="title-line">内定承諾のその瞬間まで。</span>
+                </h1>
+                <p class="hero-description">人と企業が出会う、そのすべてに真摯に向き合う。<br>点ではなく一本の線で、採用を成功へつなぐ。</p>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span>scroll</span>
+                <div class="scroll-arrow"></div>
+            </div>
+            
+            <!-- セクション波線 -->
+            <div class="section-wave">
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+                    <path class="wave-path wave-1" d="M0,100 C360,180 720,20 1080,100 C1260,140 1380,80 1440,100 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-2" d="M0,120 C320,40 640,160 960,80 C1200,20 1360,140 1440,100 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-3" d="M0,80 C400,160 800,40 1200,120 C1360,160 1420,100 1440,120 L1440,200 L0,200 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Storyセクション -->
+        <section id="story" class="section story-section">
+            <div class="section-bg parallax-bg"></div>
+            
+            <!-- 星と光の装飾（画面全体） -->
+            <div class="story-decoration">
+                <!-- 星 -->
+                <div class="deco-star star-1"></div>
+                <div class="deco-star star-2"></div>
+                <div class="deco-star star-3"></div>
+                <div class="deco-star star-4"></div>
+                <div class="deco-star star-5"></div>
+                <div class="deco-star star-6"></div>
+                <div class="deco-star star-7"></div>
+                <div class="deco-star star-8"></div>
+                <!-- 光 -->
+                <div class="deco-light light-1"></div>
+                <div class="deco-light light-2"></div>
+                <div class="deco-light light-3"></div>
+                <div class="deco-light light-4"></div>
+                <!-- グロー -->
+                <div class="deco-glow glow-1"></div>
+                <div class="deco-glow glow-2"></div>
+                <div class="deco-glow glow-3"></div>
+                <!-- 小惑星 -->
+                <div class="deco-planet planet-small-1"></div>
+                <div class="deco-planet planet-small-2"></div>
+                <div class="deco-planet planet-small-3"></div>
+            </div>
+            
+            <div class="section-content story-layout">
+                <!-- 左側：テキスト -->
+                <div class="story-left">
+                    <div class="section-header">
+                        <span class="section-label">Story</span>
+                        <h2 class="section-title scroll-reveal-text">
+                            モヤモヤをワクワクに。
+                        </h2>
+                    </div>
+                    <div class="story-text fade-in">
+                        <p>就職も、採用も。<br>
+                        本来は、もっとワクワクするものだと私たちは考えています。</p>
+                        
+                        <p>新しい環境に飛び込み、まだ見ぬ仲間と出会い、自分の可能性を試していく。<br>
+                        それは人生の中でも、数少ない"希望に満ちた選択"のはずです。</p>
+                        
+                        <p>けれど現実の日本の新卒市場は、そのワクワクを感じる前に、多くのモヤモヤを生んでいます。<br>
+                        学生は「大手かどうか」で判断せざるを得ず、企業は変化する市場に対し採用のアップデートが追いついていない。<br>
+                        知っているか、知らないかだけで選択肢が分かれてしまう——</p>
+                        
+                        <p>この市場には、構造的な歪みがあります。</p>
+                        
+                        <p>私たちは、その歪みを個人の問題だとは考えません。<br>
+                        <strong>問題は、仕組みそのものにある。</strong></p>
+                        
+                        <p>企業ごとにフェーズも文化も、目指す未来も違う。<br>
+                        であれば、採用の答えも一社一社違って当然です。</p>
+                        
+                        <p>母集団形成から選考、内定承諾までを一本の線で捉え、<br>
+                        企業にとって本当に必要な人材と、その人が心から納得して選べる採用を創っていく。</p>
+                        
+                        <p><strong>モヤモヤを、ワクワクに。</strong><br>
+                        就活と採用を「作業」ではなく、「未来を描く時間」に変える。</p>
+                        
+                        <p>それが、私たちがこの事業を続ける理由です。</p>
+                    </div>
+                </div>
+                
+                <!-- 右側：背景透過動画 -->
+                <div class="story-right fade-in">
+                    <div class="story-video-container">
+                        <video autoplay loop muted playsinline class="story-video" preload="auto">
+                            <source src="Space%20Shuttle%20v9%20-%20hd.webm" type="video/webm">
+                            <source src="Space%20Shuttle%20v9%20-%20hd_2-1.mov" type='video/mp4; codecs="hvc1"'>
+                            お使いのブラウザは動画再生に対応していません。
+                        </video>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- セクション波線 -->
+            <div class="section-wave wave-variant-2">
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+                    <path class="wave-path wave-1" d="M0,60 C240,140 480,20 720,100 C960,180 1200,40 1440,80 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-2" d="M0,100 C360,20 720,160 1080,60 C1260,20 1380,100 1440,80 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-3" d="M0,140 C480,60 960,140 1440,100 L1440,200 L0,200 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- What is Edge Hub セクション -->
+        <section class="section universe-section">
+            <div class="universe-bg">
+                <div class="floating-particles"></div>
+            </div>
+            
+            <!-- 左側：背景透過動画 -->
+            <div class="universe-video-left">
+                <video autoplay loop muted playsinline class="universe-video" preload="auto">
+                    <source src="astro-rocket-animation-2025-10-17-00-16-28-utc%20(2).webm" type="video/webm">
+                    <source src="astro-rocket-animation-2025-10-17-00-16-28-utc%20(2)_1.mov" type='video/mp4; codecs="hvc1"'>
+                </video>
+            </div>
+            
+            <div class="section-content">
+                <div class="universe-header fade-in">
+                    <h2 class="universe-title scroll-reveal-text">What is<br>Edge Hub?</h2>
+                </div>
+                <div class="universe-description fade-in">
+                    <p>私たちは、人の個性には無限の可能性があると考えています。<br>
+                    一人ひとりが持つ価値は、決して型にはまるものではなく、<br>
+                    環境や出会いによって、いくらでも広がっていく。</p>
+                    
+                    <p>その姿を、私たちは宇宙に見立てました。<br>
+                    果てしなく広がり、未知に満ち、<br>
+                    まだ名前のついていない可能性が無数に存在する世界。</p>
+                    
+                    <p><strong>Edge Hubは、<br>
+                    その可能性が交差し、動き出す"起点"です。</strong></p>
+                </div>
+                
+                <div class="read-more-container fade-in">
+                    <a href="about.html" class="read-more-btn">
+                        <span>Read More</span>
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <!-- セクション波線 -->
+            <div class="section-wave wave-variant-3">
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+                    <path class="wave-path wave-1" d="M0,120 C180,60 360,140 540,80 C720,20 900,160 1080,100 C1260,40 1380,120 1440,80 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-2" d="M0,80 C300,160 600,40 900,120 C1100,180 1300,60 1440,100 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-3" d="M0,100 C200,40 400,140 600,80 C800,20 1000,160 1200,100 C1350,60 1420,120 1440,100 L1440,200 L0,200 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Serviceセクション -->
+        <section id="service" class="section service-section">
+            <div class="section-bg parallax-bg"></div>
+            
+            <!-- 右側：背景透過動画 -->
+            <div class="service-video-right">
+                <video autoplay loop muted playsinline class="service-video" preload="auto">
+                    <source src="astronaut-do-multitasking-job-animation-2025-10-16-07-52-08-utc.webm" type="video/webm">
+                    <source src="astronaut-do-multitasking-job-animation-2025-10-16-07-52-08-utc_1.mov" type='video/mp4; codecs="hvc1"'>
+                </video>
+            </div>
+            
+            <div class="section-content service-content-wide">
+                <div class="section-header service-header-center">
+                    <span class="section-label">Service</span>
+                    <h2 class="section-title scroll-reveal-text">事業内容</h2>
+                </div>
+                <div class="service-cards-row fade-in">
+                    <!-- 事業1 -->
+                    <div class="service-card">
+                        <div class="service-card-image">
+                            <img src="プラットフォーム.jpeg" alt="新卒採用プラットフォーム運営事業">
+                        </div>
+                        <h3 class="service-card-title">新卒採用プラットフォーム運営事業</h3>
+                        <p class="service-card-text">オンラインの「数」ではなく、対面の「確実な出会い」で決着をつける新卒採用。無機質なテキストマッチングではなく、必ず会い、必ず話すことを前提に設計されたプラットフォームです。イベントやワークを通じて人柄や温度感が自然に伝わり、企業も学生も「会ってから考える」フラットな出会いを実現。さらに行動データを活用し、出会いを再現可能な採用接点へと進化させます。</p>
+                    </div>
+                    <!-- 事業2 -->
+                    <div class="service-card">
+                        <div class="service-card-image">
+                            <img src="採用プロセス.jpeg" alt="採用プロセス診断">
+                        </div>
+                        <h3 class="service-card-title">採用プロセス診断</h3>
+                        <p class="service-card-text">なぜ惹かれないのか。なぜ離脱されるのか。その答えは、学生の"行動"の中にあります。応募から面接までの各フェーズで起きている行動データをもとに、採用プロセスの「詰まり」や「違和感」を可視化。感覚や経験則に頼らず、行動ログに基づいた改善レポートで、採用成果につながる最短ルートを描き出します。</p>
+                    </div>
+                    <!-- 事業3 -->
+                    <div class="service-card">
+                        <div class="service-card-image">
+                            <img src="採用代行.jpeg" alt="採用代行（RPO）/コンサル">
+                        </div>
+                        <h3 class="service-card-title">採用代行（RPO）/コンサル</h3>
+                        <p class="service-card-text">人事がいなくても、採用で負けない体制を。採用戦略の設計から実務運用まで、ひとつの採用部門として一気通貫で伴走します。選考設計や内定後フォロー、入社前研修まで踏み込み、内定辞退・早期離職・育成コストの課題を同時に抑制。採るだけで終わらせない、活躍と定着まで見据えた採用支援です。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- セクション波線 -->
+            <div class="section-wave">
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+                    <path class="wave-path wave-1" d="M0,80 C360,160 720,40 1080,120 C1260,180 1380,60 1440,100 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-2" d="M0,140 C240,60 480,180 720,100 C960,20 1200,140 1440,80 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-3" d="M0,100 C400,40 800,160 1200,80 C1380,40 1440,100 1440,100 L1440,200 L0,200 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 提携企業先セクション -->
+        <section id="company" class="section partners-section">
+            <!-- タイトルエリア -->
+            <div class="partners-header-area">
+                <span class="section-label">Partners</span>
+                <h2 class="partners-main-title">提携企業・団体様</h2>
+            </div>
+            
+            <!-- ロゴスクロールエリア -->
+            <div class="logo-scroll-container">
+                <div class="logo-scroll-track">
+                    <!-- 1セット目 -->
+                    <div class="logo-card">
+                        <img src="w.PNG" alt="Frontier" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="株式会社RIO ロゴ.png" alt="RIO" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="Y.PNG" alt="AI教育" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="recareer.png" alt="RE-CAREER" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="q.PNG" alt="DESIGNER Inc" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="らっくプラック　ロゴ.png" alt="らっくぷらっく" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="カチナビ　ロゴ.png" alt="カチナビ" class="partner-logo">
+                    </div>
+                    <!-- 2セット目（無限ループ用） -->
+                    <div class="logo-card">
+                        <img src="w.PNG" alt="Frontier" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="株式会社RIO ロゴ.png" alt="RIO" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="Y.PNG" alt="AI教育" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="recareer.png" alt="RE-CAREER" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="q.PNG" alt="DESIGNER Inc" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="らっくプラック　ロゴ.png" alt="らっくぷらっく" class="partner-logo">
+                    </div>
+                    <div class="logo-card">
+                        <img src="カチナビ　ロゴ.png" alt="カチナビ" class="partner-logo">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 説明テキスト -->
+            <div class="partners-footer-text">
+                <p>掲載許可いただいた企業様のみ掲載しております。</p>
+            </div>
+            
+            <!-- セクション波線 -->
+            <div class="section-wave wave-variant-2">
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+                    <path class="wave-path wave-1" d="M0,100 C200,40 400,160 600,100 C800,40 1000,160 1200,100 C1350,60 1440,120 1440,100 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-2" d="M0,60 C300,140 600,40 900,120 C1150,180 1350,60 1440,100 L1440,200 L0,200 Z"></path>
+                    <path class="wave-path wave-3" d="M0,120 C360,60 720,140 1080,80 C1280,40 1400,100 1440,80 L1440,200 L0,200 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- お問い合わせセクション -->
+        <section id="contact" class="section contact-section">
+            <div class="universe-bg">
+                <div class="floating-particles"></div>
+            </div>
+            
+            <!-- 右側：背景透過動画 -->
+            <div class="contact-video-right">
+                <video autoplay loop muted playsinline class="contact-video" preload="auto">
+                    <source src="3d-robot-promotion-animation-transparent-backgroun-2025-10-16-09-45-27-utc%20(1).webm" type="video/webm">
+                    <source src="3d-robot-promotion-animation-transparent-backgroun-2025-10-16-09-45-27-utc%20(1)_1.mov" type='video/mp4; codecs="hvc1"'>
+                </video>
+            </div>
+            
+            <div class="section-content">
+                <div class="contact-header fade-in">
+                    <span class="section-label">Contact</span>
+                    <h2 class="section-title scroll-reveal-text">お問い合わせ</h2>
+                    <p class="contact-description">採用に関するご相談、サービスについてのお問い合わせは<br>下記よりお気軽にご連絡ください。</p>
+                </div>
+                <div class="read-more-container fade-in">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe2GjIQT_SpEZv3Rfr3lit8FlPfCZixRh3qxfFyLDkIku5e9A/viewform?usp=header" class="read-more-btn" target="_blank">
+                        <span>お問い合わせ</span>
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="footer-new">
+            <div class="footer-container">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <img src="会社ロゴ　白文字.png" alt="Edge Hub" class="footer-logo-new">
+                        <p class="footer-tagline">母集団形成から、内定承諾のその瞬間まで。</p>
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="#hero">TOP</a>
+                        <a href="about.html">ABOUT US</a>
+                        <a href="company.html">COMPANY</a>
+                        <a href="#service">SERVICE</a>
+                        <a href="#contact">CONTACT</a>
+                    </nav>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright-new">© 2025 Edge Hub Inc. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
