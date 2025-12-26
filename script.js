@@ -500,9 +500,9 @@ function initMobileStoryParallax() {
             // スクロール進行度を計算（0〜1）
             const progress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
             
-            // 左上に移動するパララックス効果
-            const moveX = progress * -80; // 左に80px移動
-            const moveY = progress * -100; // 上に100px移動
+            // 左上に移動するパララックス効果（速度を上げた）
+            const moveX = progress * -150; // 左に150px移動
+            const moveY = progress * -200; // 上に200px移動
             
             storyImage1.style.transform = `translate(${moveX}px, ${moveY}px)`;
         }

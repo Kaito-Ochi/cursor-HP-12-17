@@ -4290,11 +4290,26 @@ body {
         pointer-events: none;
         opacity: 0.85;
     }
+    
+    /* What is Edge Hub?セクション：モバイル用静止画 */
+    .universe-mobile-image {
+        display: block !important;
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 180px;
+        height: auto;
+        z-index: 0; /* 文章より下 */
+        pointer-events: none;
+        opacity: 0.85;
+    }
 }
 
-/* PC版: ストーリーセクションのモバイル用静止画を非表示 */
+/* PC版: モバイル用静止画を非表示 */
 .story-mobile-image-1,
-.story-mobile-image-2 {
+.story-mobile-image-2,
+.universe-mobile-image {
     display: none;
 }
 
