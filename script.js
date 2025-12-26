@@ -477,3 +477,45 @@ window.addEventListener('load', () => {
     document.body.style.overflow = 'auto';
 });
 
+/**
+ * モバイル用: ストーリーセクション画像のパララックス効果
+ */
+function initMobileStoryParallax() {
+    const storyImage1 = document.querySelector('.story-mobile-image-1');
+    const storySection = document.getElementById('story');
+    
+    if (!storyImage1 || !storySection) return;
+    
+    // モバイルのみ適用（768px以下）
+    if (window.innerWidth > 768) return;
+    
+    window.addEventListener('scroll', () => {
+        const rect = storySection.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionHeight = rect.height;
+        const windowHeight = window.innerHeight;
+        
+        // セクションが画面内にある場合
+        if (sectionTop < windowHeight && sectionTop > -sectionHeight) {
+            // スクロール進行度を計算（0〜1）
+            const progress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
+            
+            // 左上に移動するパララックス効果
+            const moveX = progress * -80; // 左に80px移動
+            const moveY = progress * -100; // 上に100px移動
+            
+            storyImage1.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        }
+    });
+}
+
+// DOM読み込み完了時にパララックス初期化
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileStoryParallax();
+});
+
+// リサイズ時に再初期化
+window.addEventListener('resize', () => {
+    initMobileStoryParallax();
+});
+

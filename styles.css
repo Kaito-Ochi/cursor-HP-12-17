@@ -4265,7 +4265,7 @@ body {
         transform: rotate(-90deg); /* 親の90度回転を打ち消す */
     }
     
-    /* ストーリーセクション：モバイル用静止画1（見出し横） */
+    /* ストーリーセクション：モバイル用静止画1（見出し横・パララックス効果） */
     .story-mobile-image-1 {
         display: block !important;
         position: absolute;
@@ -4273,8 +4273,9 @@ body {
         top: 280px;
         width: 150px;
         height: auto;
-        z-index: 5;
+        z-index: 0; /* 文章より下 */
         pointer-events: none;
+        opacity: 0.85;
     }
     
     /* ストーリーセクション：モバイル用静止画2（セクション最後） */
@@ -4285,8 +4286,9 @@ body {
         bottom: 80px;
         width: 200px;
         height: auto;
-        z-index: 5;
+        z-index: 0; /* 文章より下 */
         pointer-events: none;
+        opacity: 0.85;
     }
 }
 
