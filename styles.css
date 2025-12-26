@@ -4361,13 +4361,14 @@ body {
         overflow: visible;
     }
     
-    /* ハンバーガーメニュー用静止画（TOPボタンの上に配置） */
+    /* ハンバーガーメニュー用静止画（TOPボタンの上、左端に揃える） */
     .hamburger-menu-image {
         display: block !important;
         position: relative;
         width: 180px;
         height: auto;
-        margin: 0 auto 20px auto;
+        margin: 20px 0 10px 0;
+        align-self: flex-start;
         pointer-events: none;
         opacity: 0.9;
     }
