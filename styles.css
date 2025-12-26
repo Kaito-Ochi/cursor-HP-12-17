@@ -4316,13 +4316,27 @@ body {
         pointer-events: none;
         opacity: 0.85;
     }
+    
+    /* Partnersセクション：モバイル用静止画（「様」の右） */
+    .partner-mobile-image {
+        display: block !important;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        width: 100px;
+        height: auto;
+        z-index: 0; /* 文章より下 */
+        pointer-events: none;
+        opacity: 0.85;
+    }
 }
 
 /* PC版: モバイル用静止画を非表示 */
 .story-mobile-image-1,
 .story-mobile-image-2,
 .universe-mobile-image,
-.service-mobile-image {
+.service-mobile-image,
+.partner-mobile-image {
     display: none;
 }
 
