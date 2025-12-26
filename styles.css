@@ -4229,3 +4229,16 @@ body {
     }
 }
 
+/* ============================================
+   Mobile: Hide all videos
+   ============================================ */
+@media (max-width: 768px) {
+    .story-video-container,
+    .universe-video-left,
+    .service-video-right,
+    .contact-video-right,
+    .loader-rocket {
+        display: none !important;
+    }
+}
+
