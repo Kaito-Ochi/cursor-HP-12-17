@@ -4335,7 +4335,7 @@ body {
         display: block !important;
         position: absolute;
         right: 10px;
-        bottom: 20px;
+        bottom: -30px;
         width: 180px;
         height: auto;
         z-index: 0; /* 文章より下 */
