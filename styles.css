@@ -4343,11 +4343,11 @@ body {
         opacity: 0.85;
     }
     
-    /* フッター：モバイル用静止画（底辺をページ底に、中央やや右） */
+    /* フッター：モバイル用静止画（底辺をページ底に、右端を画面右端に） */
     .footer-mobile-image {
         display: block !important;
         position: absolute;
-        right: 20%;
+        right: 0;
         bottom: 0;
         width: 220px;
         height: auto;
