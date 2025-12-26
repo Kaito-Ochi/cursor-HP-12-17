@@ -4372,6 +4372,36 @@ body {
         pointer-events: none;
         opacity: 0.9;
     }
+    
+    /* About Us ページ: Edge見出しの右に配置 */
+    .edge-mobile-image {
+        display: block !important;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        width: 100px;
+        height: auto;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.85;
+    }
+    
+    /* About Us ページ: Hub見出しの右に配置 */
+    .hub-mobile-image {
+        display: block !important;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        width: 100px;
+        height: auto;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.85;
+    }
+    
+    .word-section {
+        position: relative;
+    }
 }
 
 /* PC版: モバイル用静止画を非表示 */
@@ -4382,7 +4412,9 @@ body {
 .partner-mobile-image,
 .contact-mobile-image,
 .footer-mobile-image,
-.hamburger-menu-image {
+.hamburger-menu-image,
+.edge-mobile-image,
+.hub-mobile-image {
     display: none;
 }
 
