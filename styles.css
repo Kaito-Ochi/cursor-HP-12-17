@@ -4321,21 +4321,21 @@ body {
     .partner-mobile-image {
         display: block !important;
         position: absolute;
-        right: 10px;
+        right: 30px;
         top: 40px;
-        width: 150px;
+        width: 130px;
         height: auto;
         z-index: 0; /* 文章より下 */
         pointer-events: none;
         opacity: 0.85;
     }
     
-    /* お問い合わせセクション：モバイル用静止画（ボタンの右下） */
+    /* お問い合わせセクション：モバイル用静止画（ボタンの下） */
     .contact-mobile-image {
         display: block !important;
         position: absolute;
         right: 10px;
-        bottom: 120px;
+        bottom: 60px;
         width: 180px;
         height: auto;
         z-index: 0; /* 文章より下 */
