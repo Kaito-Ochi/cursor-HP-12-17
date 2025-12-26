@@ -4230,15 +4230,38 @@ body {
 }
 
 /* ============================================
-   Mobile: Hide all videos
+   Mobile: Hide all videos, show static images
    ============================================ */
+
+/* PC版: モバイル用静止画を非表示 */
+.rocket-image-mobile {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    /* 動画を非表示 */
     .story-video-container,
     .universe-video-left,
     .service-video-right,
-    .contact-video-right,
-    .loader-rocket {
+    .contact-video-right {
         display: none !important;
+    }
+    
+    /* ローダーロケットは表示するが、動画は非表示 */
+    .loader-rocket {
+        display: block !important;
+    }
+    
+    .loader-rocket .rocket-video {
+        display: none !important;
+    }
+    
+    /* モバイル用ロケット静止画を表示 */
+    .rocket-image-mobile {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 }
 
