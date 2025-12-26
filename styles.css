@@ -4360,6 +4360,19 @@ body {
         position: relative;
         overflow: visible;
     }
+    
+    /* ハンバーガーメニュー用静止画（メニューの左端に配置） */
+    .hamburger-menu-image {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 200px;
+        height: auto;
+        transform: translateX(-100%);
+        pointer-events: none;
+        opacity: 0.9;
+    }
 }
 
 /* PC版: モバイル用静止画を非表示 */
@@ -4369,7 +4382,8 @@ body {
 .service-mobile-image,
 .partner-mobile-image,
 .contact-mobile-image,
-.footer-mobile-image {
+.footer-mobile-image,
+.hamburger-menu-image {
     display: none;
 }
 
