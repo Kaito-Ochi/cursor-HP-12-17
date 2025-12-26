@@ -4321,9 +4321,22 @@ body {
     .partner-mobile-image {
         display: block !important;
         position: absolute;
-        right: 20px;
-        top: 60px;
-        width: 100px;
+        right: 10px;
+        top: 40px;
+        width: 150px;
+        height: auto;
+        z-index: 0; /* 文章より下 */
+        pointer-events: none;
+        opacity: 0.85;
+    }
+    
+    /* お問い合わせセクション：モバイル用静止画（ボタンの右下） */
+    .contact-mobile-image {
+        display: block !important;
+        position: absolute;
+        right: 10px;
+        bottom: 120px;
+        width: 180px;
         height: auto;
         z-index: 0; /* 文章より下 */
         pointer-events: none;
@@ -4336,7 +4349,8 @@ body {
 .story-mobile-image-2,
 .universe-mobile-image,
 .service-mobile-image,
-.partner-mobile-image {
+.partner-mobile-image,
+.contact-mobile-image {
     display: none;
 }
 
