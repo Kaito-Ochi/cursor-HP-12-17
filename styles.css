@@ -4342,6 +4342,24 @@ body {
         pointer-events: none;
         opacity: 0.85;
     }
+    
+    /* フッター：モバイル用静止画（底辺をページ底に、中央やや右） */
+    .footer-mobile-image {
+        display: block !important;
+        position: absolute;
+        right: 20%;
+        bottom: 0;
+        width: 220px;
+        height: auto;
+        z-index: 0; /* コンテンツより下 */
+        pointer-events: none;
+        opacity: 0.9;
+    }
+    
+    .footer-new {
+        position: relative;
+        overflow: visible;
+    }
 }
 
 /* PC版: モバイル用静止画を非表示 */
@@ -4350,7 +4368,8 @@ body {
 .universe-mobile-image,
 .service-mobile-image,
 .partner-mobile-image,
-.contact-mobile-image {
+.contact-mobile-image,
+.footer-mobile-image {
     display: none;
 }
 
