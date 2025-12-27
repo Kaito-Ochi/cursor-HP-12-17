@@ -3834,8 +3834,8 @@ body {
     }
     
     .logo-scroll-track {
-        gap: 4px; /* さらに半分に縮小 */
-        animation-duration: 25s;
+        gap: 0px; /* 間隔をなくす */
+        animation-duration: 50s; /* スピードを落とす */
     }
     
     .partners-footer-text {
@@ -3874,8 +3874,8 @@ body {
     }
     
     .logo-scroll-track {
-        gap: 5px; /* さらに半分に縮小 */
-        animation-duration: 20s;
+        gap: 0px; /* 間隔をなくす */
+        animation-duration: 45s; /* スピードを落とす */
     }
     
     .partners-footer-text {
