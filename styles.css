@@ -4418,3 +4418,73 @@ body {
     display: none;
 }
 
+/* =========================================
+   Safari ブラウザ専用スタイル（デスクトップ）
+   Chrome/Firefox等には一切影響しません
+   ========================================= */
+
+/* Safari: 動画を非表示 */
+body.safari .story-video-container,
+body.safari .universe-video-left,
+body.safari .service-video-right,
+body.safari .contact-video-right,
+body.safari .loader-rocket .rocket-video {
+    display: none !important;
+}
+
+/* Safari: 静止画を表示（PC用に位置調整） */
+body.safari .story-mobile-image-1,
+body.safari .story-mobile-image-2,
+body.safari .universe-mobile-image,
+body.safari .service-mobile-image,
+body.safari .contact-mobile-image {
+    display: block !important;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+/* Safari: Story セクション静止画1 */
+body.safari .story-mobile-image-1 {
+    width: 350px;
+    left: 10%;
+    top: 150px;
+}
+
+/* Safari: Story セクション静止画2 */
+body.safari .story-mobile-image-2 {
+    width: 400px;
+    right: 5%;
+    bottom: 50px;
+}
+
+/* Safari: What is Edge Hub セクション */
+body.safari .universe-mobile-image {
+    width: 400px;
+    left: 5%;
+    top: 100px;
+}
+
+/* Safari: Service セクション */
+body.safari .service-mobile-image {
+    width: 300px;
+    right: 10%;
+    top: 150px;
+}
+
+/* Safari: Contact セクション */
+body.safari .contact-mobile-image {
+    width: 350px;
+    right: 50px;
+    bottom: 50px;
+}
+
+/* Safari: スプラッシュスクリーン用静止画 */
+body.safari .loader-rocket .rocket-image-mobile {
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+

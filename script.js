@@ -4,6 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Safari検出（Chrome等には影響なし）
+    detectSafari();
     // 初期化
     initSplashScreen();
     initParallax();
@@ -12,6 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initHamburgerMenu();
 });
+
+/**
+ * Safari ブラウザ検出
+ * Safariの場合のみ、bodyに.safariクラスを追加
+ * Chrome/Firefox等では何も変更しない
+ */
+function detectSafari() {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (isSafari) {
+        document.body.classList.add('safari');
+    }
+}
 
 /**
  * ハンバーガーメニューの初期化
