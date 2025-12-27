@@ -4481,12 +4481,12 @@ body.safari .contact-mobile-image {
     bottom: 50px;
 }
 
-/* Safari: Partners セクション（見出しの左下にくっつくように配置） */
+/* Safari: Partners セクション（見出しの右側に配置） */
 body.safari .partner-mobile-image {
-    width: 280px;
-    left: 50%;
-    top: 60px;
-    transform: translateX(-80%);
+    width: 180px;
+    left: 60%;
+    top: 30px;
+    transform: none;
 }
 
 /* Safari: スプラッシュスクリーン用静止画（右に90度回転） */
