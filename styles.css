@@ -4485,16 +4485,16 @@ body.safari .contact-mobile-image {
 body.safari .partner-mobile-image {
     width: 180px;
     left: 60%;
-    top: 30px;
+    top: 80px;
     transform: none;
 }
 
-/* Safari: スプラッシュスクリーン用静止画（右に90度回転） */
+/* Safari: スプラッシュスクリーン用静止画（270度回転 = 右向き） */
 body.safari .loader-rocket .rocket-image-mobile {
     display: block !important;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transform: rotate(90deg);
+    transform: rotate(270deg);
 }
 
