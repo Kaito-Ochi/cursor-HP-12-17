@@ -4437,7 +4437,8 @@ body.safari .story-mobile-image-1,
 body.safari .story-mobile-image-2,
 body.safari .universe-mobile-image,
 body.safari .service-mobile-image,
-body.safari .contact-mobile-image {
+body.safari .contact-mobile-image,
+body.safari .partner-mobile-image {
     display: block !important;
     position: absolute;
     z-index: 1;
@@ -4445,14 +4446,14 @@ body.safari .contact-mobile-image {
     opacity: 0.9;
 }
 
-/* Safari: Story セクション静止画1 */
+/* Safari: Story セクション静止画1（静止画2と同じ右側の列） */
 body.safari .story-mobile-image-1 {
     width: 350px;
-    left: 10%;
-    top: 150px;
+    right: 5%;
+    top: 100px;
 }
 
-/* Safari: Story セクション静止画2 */
+/* Safari: Story セクション静止画2（右側の列、下部） */
 body.safari .story-mobile-image-2 {
     width: 400px;
     right: 5%;
@@ -4466,11 +4467,11 @@ body.safari .universe-mobile-image {
     top: 100px;
 }
 
-/* Safari: Service セクション */
+/* Safari: Service セクション（写真と被らないように上に配置） */
 body.safari .service-mobile-image {
     width: 300px;
     right: 10%;
-    top: 150px;
+    top: 50px;
 }
 
 /* Safari: Contact セクション */
@@ -4480,11 +4481,19 @@ body.safari .contact-mobile-image {
     bottom: 50px;
 }
 
-/* Safari: スプラッシュスクリーン用静止画 */
+/* Safari: Partners セクション（見出しの右に配置） */
+body.safari .partner-mobile-image {
+    width: 150px;
+    right: 20%;
+    top: 20px;
+}
+
+/* Safari: スプラッシュスクリーン用静止画（回転なし） */
 body.safari .loader-rocket .rocket-image-mobile {
     display: block !important;
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transform: none;
 }
 
