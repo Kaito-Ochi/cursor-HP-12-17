@@ -1,0 +1,251 @@
+/* =============================================================
+   Edge Hub — Services / サービス一覧 section
+   ============================================================= */
+
+.services {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(64px, 8vw, 120px);
+  background: linear-gradient(176deg, #fbfcff 0%, #eef2fb 62%, #e8eef9 100%);
+}
+.services-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding-inline: clamp(24px, 4vw, 72px);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.85fr);
+  gap: clamp(28px, 3vw, 56px);
+  align-items: start;
+}
+
+/* ---------- Left intro ---------- */
+.svc-intro { position: relative; padding-top: 6px; }
+.svc-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  color: var(--edge-500);
+}
+.svc-title {
+  margin-top: 22px;
+  font-family: var(--font-jp);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 2.7vw, 2.85rem);
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+  color: var(--navy-700);
+}
+.svc-rule {
+  display: block;
+  width: 88px;
+  height: 5px;
+  border-radius: 2px;
+  background: var(--mark-yellow);
+  margin-top: clamp(20px, 2.4vw, 30px);
+}
+.svc-lead {
+  margin-top: clamp(22px, 2.6vw, 32px);
+  max-width: 26em;
+  font-family: var(--font-jp);
+  font-weight: 400;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 2;
+  color: var(--ink-700);
+}
+
+/* decorative cubes under intro */
+.svc-cubes {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  margin-top: clamp(36px, 4.5vw, 64px);
+}
+
+/* ---------- Right stage ---------- */
+.svc-stage {
+  position: relative;
+}
+
+/* card track — each card sits on its own glowing 3D podium */
+.svc-cards {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 1.6vw, 26px);
+  align-items: end;
+}
+.svc-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: clamp(34px, 4vw, 60px);
+}
+/* the 3D podium image, peeking out behind/below the card */
+.svc-podium {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 128%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 30px 34px rgba(14, 35, 72, 0.30));
+}
+.svc-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper-pure);
+  border: 1px solid rgba(231, 229, 221, 0.8);
+  border-radius: 20px;
+  padding: clamp(24px, 1.9vw, 34px) clamp(20px, 1.6vw, 28px) clamp(26px, 2vw, 34px);
+  box-shadow: 0 30px 56px -28px rgba(14, 35, 72, 0.28), 0 6px 16px -10px rgba(11, 14, 20, 0.08);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.svc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 42px 72px -28px rgba(14, 35, 72, 0.36), 0 8px 20px -10px rgba(11, 14, 20, 0.1);
+}
+.svc-card .card-cube {
+  position: absolute;
+  top: clamp(16px, 1.4vw, 22px);
+  right: clamp(16px, 1.4vw, 22px);
+}
+.svc-card-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 2vw, 2.1rem);
+  line-height: 1;
+  color: var(--edge-500);
+  letter-spacing: -0.02em;
+}
+.svc-card-title {
+  margin-top: 12px;
+  min-height: 2.7em;
+  font-family: var(--font-jp);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.15vw, 1.2rem);
+  line-height: 1.4;
+  color: var(--navy-700);
+}
+.svc-card-media {
+  margin-top: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--paper-sink);
+}
+.svc-card-media image-slot,
+.svc-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.svc-readmore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: clamp(18px, 1.8vw, 24px);
+  padding: 13px 20px;
+  border: 1.5px solid var(--edge-500);
+  border-radius: var(--r-pill);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.1em;
+  color: var(--edge-500);
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast), box-shadow var(--dur-base) var(--ease-out);
+}
+.svc-readmore svg { width: 18px; height: 18px; transition: transform var(--dur-base) var(--ease-out); }
+.svc-readmore:hover {
+  background: var(--edge-500);
+  color: #fff;
+  box-shadow: 0 12px 26px -10px var(--edge-glow);
+}
+.svc-readmore:hover svg { transform: translateX(4px); }
+
+/* ---------- decorative background (top-right iso glass) ---------- */
+.svc-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.svc-bg .glass {
+  position: absolute;
+  top: 6%;
+  right: 4%;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  opacity: 0.85;
+}
+
+/* ===========================================================
+   Isometric cube component (navy / yellow / glass)
+   =========================================================== */
+.cube {
+  position: relative;
+  display: inline-block;
+  width: var(--cube, 40px);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  filter: drop-shadow(0 10px 16px rgba(11, 14, 20, 0.16));
+}
+.cube i { position: absolute; inset: 0; display: block; }
+.cube .f-top   { clip-path: polygon(50% 1%, 99% 26%, 50% 51%, 1% 26%); background: var(--c-top); }
+.cube .f-left  { clip-path: polygon(1% 26%, 50% 51%, 50% 99%, 1% 74%); background: var(--c-left); }
+.cube .f-right { clip-path: polygon(50% 51%, 99% 26%, 99% 74%, 50% 99%); background: var(--c-right); }
+/* subtle gloss on the top face */
+.cube .f-top::after {
+  content: "";
+  position: absolute; inset: 0;
+  clip-path: polygon(50% 1%, 99% 26%, 50% 51%, 1% 26%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 60%);
+}
+.cube--navy   { --c-top: #3A578E; --c-left: #15294F; --c-right: #0E2348; }
+.cube--blue   { --c-top: #5B8BFF; --c-left: #2F6BFF; --c-right: #1E4FD6; }
+.cube--yellow { --c-top: #FFDD7A; --c-left: #F4C544; --c-right: #D89E20; }
+.cube--glass  {
+  --c-top: rgba(150, 178, 224, 0.30);
+  --c-left: rgba(120, 150, 205, 0.22);
+  --c-right: rgba(96, 128, 188, 0.18);
+  filter: none;
+}
+
+.cube-lg { --cube: clamp(72px, 7vw, 96px); }
+.cube-md { --cube: clamp(40px, 4vw, 52px); }
+.cube-sm { --cube: clamp(28px, 2.6vw, 36px); }
+.card-cube { --cube: 30px; }
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+@media (max-width: 1080px) {
+  .services-grid { grid-template-columns: 1fr; gap: clamp(28px, 5vw, 44px); }
+  .svc-cubes { display: none; }
+  .svc-podium { display: none; }
+  .svc-cards { grid-template-columns: 1fr; gap: 24px; align-items: stretch; }
+  .svc-slot { padding-bottom: 0; }
+  .svc-card { overflow: visible; }
+  .svc-card-title { min-height: 0; }
+  .svc-card-media { aspect-ratio: 16 / 10; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .svc-card, .svc-readmore { transition: none; }
+}

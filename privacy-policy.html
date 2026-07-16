@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人情報保護方針 — Edge Hub</title>
+<link rel="stylesheet" href="css/tokens.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Noto Sans JP", sans-serif;
+    background: var(--paper);
+    color: var(--fg-body);
+    font-size: 15px;
+    line-height: var(--lh-relaxed, 1.75);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- Header ---- */
+  .pp-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(251, 250, 247, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .pp-header-inner {
+    padding-inline: clamp(24px, 4vw, 72px);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pp-brand img {
+    height: 28px;
+    display: block;
+  }
+  .pp-back {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--fg-muted);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+  .pp-back:hover { color: var(--edge-500); }
+  .pp-back svg { width: 16px; height: 16px; }
+
+  /* ---- Hero band ---- */
+  .pp-hero {
+    background: var(--navy-900);
+    padding-block: 72px 64px;
+    padding-inline: clamp(24px, 4vw, 72px);
+  }
+  .pp-hero-inner {
+    max-width: 800px;
+  }
+  .pp-eyebrow {
+    font-family: "Geist Mono", "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-on-navy-mut);
+    margin-bottom: 16px;
+  }
+  .pp-hero h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: var(--fg-on-navy);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .pp-hero-meta {
+    font-size: 13px;
+    color: var(--fg-on-navy-mut);
+    font-family: "Geist Mono", "Courier New", monospace;
+  }
+
+  /* ---- Body ---- */
+  .pp-body {
+    padding-inline: clamp(24px, 4vw, 72px);
+    padding-block: 72px 96px;
+  }
+  .pp-body-inner {
+    max-width: 800px;
+  }
+
+  /* Lead paragraph */
+  .pp-lead {
+    font-size: 15px;
+    color: var(--fg-body);
+    line-height: 1.8;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--paper-line);
+    margin-bottom: 56px;
+  }
+
+  /* Section */
+  .pp-section {
+    margin-bottom: 52px;
+  }
+  .pp-section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .pp-section-num {
+    font-family: "Geist Mono", "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--edge-500);
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .pp-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--fg);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .pp-section p {
+    font-size: 14px;
+    color: var(--fg-body);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .pp-section p:last-child { margin-bottom: 0; }
+
+  /* Sub-heading (category within a section) */
+  .pp-sub {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--fg);
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  /* List */
+  .pp-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  .pp-list li {
+    font-size: 14px;
+    color: var(--fg-body);
+    line-height: 1.7;
+    padding: 5px 0 5px 20px;
+    position: relative;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .pp-list li:first-child { border-top: 1px solid var(--paper-line); }
+  .pp-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--navy-300);
+  }
+
+  /* Shared use table */
+  .pp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 16px;
+    margin-bottom: 12px;
+  }
+  .pp-table th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--fg);
+    background: var(--paper-sink);
+    padding: 10px 14px;
+    border: 1px solid var(--paper-line);
+    white-space: nowrap;
+    width: 38%;
+  }
+  .pp-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--paper-line);
+    color: var(--fg-body);
+    line-height: 1.7;
+  }
+
+  /* Contact box */
+  .pp-contact-box {
+    background: var(--paper-sink);
+    border: 1px solid var(--paper-line);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-top: 20px;
+  }
+  .pp-contact-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--fg-body);
+    margin: 0;
+  }
+  .pp-contact-box a {
+    color: var(--edge-500);
+    text-decoration: none;
+  }
+  .pp-contact-box a:hover { text-decoration: underline; }
+  .pp-contact-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--fg);
+    margin-bottom: 12px;
+  }
+
+  /* Footer */
+  .pp-footer {
+    background: var(--navy-950);
+    padding-block: 40px;
+    padding-inline: clamp(24px, 4vw, 72px);
+    text-align: center;
+  }
+  .pp-footer-copy {
+    font-family: "Geist Mono", "Courier New", monospace;
+    font-size: 12px;
+    color: var(--fg-on-navy-mut);
+    letter-spacing: 0.05em;
+  }
+
+  /* Divider between sections */
+  .pp-divider {
+    border: none;
+    border-top: 1px solid var(--paper-line);
+    margin: 0 0 52px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="pp-header">
+  <div class="pp-header-inner">
+    <a class="pp-brand" href="index.html" aria-label="Edge Hub ホームへ戻る">
+      <img src="assets/edgehub-logo-full.png" alt="Edge Hub">
+    </a>
+    <a class="pp-back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      トップに戻る
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="pp-hero">
+  <div class="pp-hero-inner">
+    <p class="pp-eyebrow">Privacy Policy</p>
+    <h1>個人情報保護方針</h1>
+    <p class="pp-hero-meta">株式会社Edge Hub</p>
+  </div>
+</section>
+
+<!-- Body -->
+<main class="pp-body">
+  <div class="pp-body-inner">
+
+    <!-- Lead -->
+    <p class="pp-lead">株式会社Edge Hub（以下「当社」といいます。）は、新卒採用支援、就職活動支援、採用イベントの企画・運営、企業と学生のマッチング支援、採用コンサルティング、採用代行（RPO）、キャリア支援、その他当社が提供するサービスを行うにあたり、学生、求職者、企業担当者、学生団体関係者、取引先、その他関係者の皆さまの個人情報を適切に取り扱うことが重要な責務であると認識しています。<br><br>当社は、個人情報の保護に関する法律その他関係法令、ガイドライン等を遵守し、以下の方針に基づき、個人情報を適正かつ安全に取り扱います。</p>
+
+    <!-- 1 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">01</span>
+        <h2>個人情報の取得について</h2>
+      </div>
+      <p>当社は、適法かつ公正な手段により、必要な範囲で個人情報を取得します。当社が取得する個人情報には、以下の情報が含まれる場合があります。</p>
+
+      <p class="pp-sub">【学生・求職者】</p>
+      <ul class="pp-list">
+        <li>氏名</li>
+        <li>生年月日</li>
+        <li>性別</li>
+        <li>学校名、学部、学科、学年、卒業予定年</li>
+        <li>電話番号、メールアドレス、LINEアカウント等の連絡先</li>
+        <li>居住地域</li>
+        <li>志望業界、志望職種、就職活動状況</li>
+        <li>インターンシップ、説明会、面談等への参加履歴</li>
+        <li>イベント申込情報、アンケート回答内容</li>
+        <li>企業への関心度、面談希望、選考希望に関する情報</li>
+        <li>履歴書、エントリーシート、ポートフォリオ等に記載された情報</li>
+      </ul>
+
+      <p class="pp-sub">【企業担当者・取引先】</p>
+      <ul class="pp-list">
+        <li>企業担当者の氏名、部署、役職、連絡先</li>
+      </ul>
+
+      <p class="pp-sub">【学生団体関係者】</p>
+      <ul class="pp-list">
+        <li>学生団体の代表者・運営メンバーの氏名、連絡先、所属大学・学部</li>
+      </ul>
+
+      <p class="pp-sub">【共通】</p>
+      <ul class="pp-list">
+        <li>お問い合わせ内容</li>
+        <li>その他、当社サービスの提供に必要な情報</li>
+      </ul>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 2 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">02</span>
+        <h2>個人情報の利用目的について</h2>
+      </div>
+      <p>当社は、取得した個人情報を以下の目的で利用します。</p>
+      <ul class="pp-list">
+        <li>当社が主催・運営するイベント、説明会、交流会、セミナー等の申込受付、本人確認、参加管理のため</li>
+        <li>学生、求職者、企業間のマッチング支援、面談調整、連絡、フォローアップのため</li>
+        <li>学生、求職者の希望や適性に応じた企業、インターンシップ、採用情報、イベント情報等の案内のため</li>
+        <li>企業に対する採用候補者情報の提供、採用支援、採用活動の改善提案のため</li>
+        <li>企業の採用活動に関するヒアリング、商談、契約、請求、業務連絡のため</li>
+        <li>採用コンサルティング（インターンプログラムの設計・監修を含む）、採用代行（RPO）、キャリア相談等のサービス提供のため</li>
+        <li>学生団体との連携・運営調整、コミュニティ運営のため</li>
+        <li>イベント参加後のアンケート、満足度調査、志望度調査、分析レポート作成のため</li>
+        <li>当社サービスの改善、新サービスの企画、統計データの作成・分析のため</li>
+        <li>メール、LINE、SNS等による各種情報提供、キャンペーン、イベント案内のため</li>
+        <li>お問い合わせ、ご相談、苦情等への対応のため</li>
+        <li>不正利用、トラブル、規約違反等の防止および対応のため</li>
+        <li>法令に基づく対応、行政機関等からの要請への対応のため</li>
+        <li>その他、上記に付随する業務のため</li>
+      </ul>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 3 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">03</span>
+        <h2>個人情報の第三者提供について</h2>
+      </div>
+      <p>当社は、法令に定める場合を除き、あらかじめ本人の同意を得ることなく、個人情報を第三者に提供しません。</p>
+      <p>ただし、当社サービスの性質上、学生・求職者本人の同意を得たうえで、イベント参加企業、採用検討企業、業務提携先等に対し、以下の個人情報を提供する場合があります。</p>
+      <ul class="pp-list">
+        <li>氏名</li>
+        <li>学校名、学部、学科、学年、卒業予定年</li>
+        <li>連絡先</li>
+        <li>志望業界、志望職種</li>
+        <li>就職活動状況</li>
+        <li>イベント参加履歴</li>
+        <li>面談希望、選考希望に関する情報</li>
+        <li>アンケート回答内容</li>
+        <li>履歴書、エントリーシート、ポートフォリオ等の提出資料</li>
+        <li>その他、採用活動、面談調整、マッチング支援に必要な情報</li>
+      </ul>
+      <p>提供先は、当社のイベント参加企業、採用支援先企業、業務提携先、その他本人が情報提供に同意した相手方に限ります。</p>
+      <p>また、以下の場合には、本人の同意なく個人情報を提供することがあります。</p>
+      <ul class="pp-list">
+        <li>法令に基づく場合</li>
+        <li>人の生命、身体または財産の保護のために必要があり、本人の同意を得ることが困難な場合</li>
+        <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要があり、本人の同意を得ることが困難な場合</li>
+        <li>国の機関、地方公共団体またはその委託を受けた者が法令上の事務を遂行することに協力する必要があり、本人の同意を得ることで当該事務の遂行に支障を及ぼすおそれがある場合</li>
+        <li>その他、個人情報保護法その他法令により認められる場合</li>
+      </ul>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 4 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">04</span>
+        <h2>個人情報の委託について</h2>
+      </div>
+      <p>当社は、利用目的の達成に必要な範囲で、個人情報の取扱いの全部または一部を外部事業者に委託することがあります。この場合、当社は、委託先に対して必要かつ適切な監督を行い、個人情報の安全管理が図られるよう努めます。</p>
+      <p>委託先の例は以下のとおりです。</p>
+      <ul class="pp-list">
+        <li>システム運用会社</li>
+        <li>メール配信サービス提供会社</li>
+        <li>フォーム管理サービス提供会社</li>
+        <li>顧客管理ツール提供会社</li>
+        <li>決済・請求関連サービス提供会社</li>
+        <li>イベント運営に関する業務委託先</li>
+        <li>その他、当社サービスの提供に必要な業務委託先</li>
+      </ul>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 5 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">05</span>
+        <h2>個人情報の共同利用について</h2>
+      </div>
+      <p>当社は、以下のとおり、業務提携する学生団体と個人情報を共同利用する場合があります。</p>
+      <table class="pp-table">
+        <tr>
+          <th>共同利用する個人情報の項目</th>
+          <td>氏名、所属大学・学部・学年、連絡先、イベント参加履歴</td>
+        </tr>
+        <tr>
+          <th>共同利用者の範囲</th>
+          <td>当社と業務提携する学生団体</td>
+        </tr>
+        <tr>
+          <th>利用目的</th>
+          <td>イベント運営・集客・参加者フォローアップ・学生コミュニティ運営のため</td>
+        </tr>
+        <tr>
+          <th>管理責任者</th>
+          <td>株式会社Edge Hub（代表取締役　越智 海翔）</td>
+        </tr>
+      </table>
+      <p>上記以外に共同利用を行う場合には、共同利用する個人情報の項目、共同利用者の範囲、利用目的、管理責任者等を、あらかじめ本人に通知または公表します。</p>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 6 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">06</span>
+        <h2>個人情報の安全管理措置について</h2>
+      </div>
+      <p>当社は、個人情報の漏えい、滅失、毀損、不正アクセス、改ざん等を防止するため、必要かつ適切な安全管理措置を講じます。主な安全管理措置は以下のとおりです。</p>
+      <ul class="pp-list">
+        <li>個人情報の取扱いに関する社内ルールの整備</li>
+        <li>個人情報を取り扱う者の範囲の限定</li>
+        <li>個人情報へのアクセス権限の管理</li>
+        <li>パスワード管理、アクセス制限等による技術的保護</li>
+        <li>個人情報を含む書類、データ、端末等の適切な管理</li>
+        <li>個人情報の取扱いに関する従業者、業務委託先への注意喚起および教育</li>
+        <li>個人情報の漏えい等が発生した場合の報告・対応体制の整備</li>
+      </ul>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 7 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">07</span>
+        <h2>Cookie等の利用について</h2>
+      </div>
+      <p>当社のウェブサイトでは、利便性の向上、アクセス状況の分析、サービス改善、広告配信等のためにCookieその他類似の技術を利用する場合があります。</p>
+      <p>Cookieとは、ウェブサイトの閲覧情報を利用者の端末に保存する仕組みです。Cookieにより取得される情報には、通常、特定の個人を直接識別できる情報は含まれません。</p>
+      <p>当社は、Google Analytics等のアクセス解析ツールを利用する場合があります。これらのツールではCookieを使用し、利用者のウェブサイト利用状況を収集、分析することがあります。</p>
+      <p>利用者は、ブラウザの設定によりCookieを無効にすることができます。ただし、Cookieを無効にした場合、当社ウェブサイトの一部機能が正常に利用できない場合があります。</p>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 8 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">08</span>
+        <h2>個人情報の開示、訂正、利用停止等について</h2>
+      </div>
+      <p>本人またはその代理人から、当社が保有する個人情報について、利用目的の通知、開示、訂正、追加、削除、利用停止、消去、第三者提供の停止等の請求があった場合、当社は、法令に従い、本人確認を行ったうえで、合理的な範囲で速やかに対応します。</p>
+      <p>ただし、以下の場合には、請求に応じられないことがあります。</p>
+      <ul class="pp-list">
+        <li>本人または第三者の生命、身体、財産その他の権利利益を害するおそれがある場合</li>
+        <li>当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合</li>
+        <li>法令に違反することとなる場合</li>
+        <li>本人確認ができない場合</li>
+        <li>その他、法令上対応義務を負わない場合</li>
+      </ul>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 9 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">09</span>
+        <h2>個人情報の保存期間について</h2>
+      </div>
+      <p>当社は、取得した個人情報を、利用目的の達成に必要な範囲で保存します。保存期間が経過した場合、または利用目的の達成により保有の必要がなくなった場合には、法令上保存が必要な場合を除き、適切な方法により削除または廃棄します。</p>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 10 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">10</span>
+        <h2>外部サービス・外部リンクについて</h2>
+      </div>
+      <p>当社ウェブサイト、メール、LINE、SNS等には、外部サービスまたは外部サイトへのリンクが含まれる場合があります。なお、LINEを通じたコミュニケーションには、LINE株式会社のプライバシーポリシーも適用されます。外部サービスまたは外部サイトにおける個人情報の取扱いについては、各運営者が定めるプライバシーポリシー等をご確認ください。当社は、外部サービスまたは外部サイトにおける個人情報の取扱いについて責任を負いません。</p>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 11 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">11</span>
+        <h2>法令等の遵守と見直しについて</h2>
+      </div>
+      <p>当社は、個人情報の取扱いに関して適用される法令、ガイドラインその他の規範を遵守します。また、法令の改正、事業内容の変更、社会情勢の変化等に応じて、本方針の内容を適宜見直し、改善に努めます。本方針を変更した場合には、当社ウェブサイト上に掲載する方法その他適切な方法により公表します。</p>
+    </div>
+
+    <hr class="pp-divider">
+
+    <!-- 12 -->
+    <div class="pp-section">
+      <div class="pp-section-head">
+        <span class="pp-section-num">12</span>
+        <h2>お問い合わせ窓口</h2>
+      </div>
+      <p>個人情報の取扱いに関するお問い合わせ、開示等の請求、苦情・相談については、以下の窓口までご連絡ください。</p>
+      <div class="pp-contact-box">
+        <p class="pp-contact-name">株式会社Edge Hub　個人情報相談窓口</p>
+        <p>所在地：〒651-0088 兵庫県神戸市中央区小野柄通5丁目1-12 樫野ビル 3F<br>
+        メールアドレス：<a href="mailto:backoffice@edge-hub.net">backoffice@edge-hub.net</a><br>
+        受付時間：平日 10:00〜18:00（土日祝日、年末年始を除く）</p>
+        <br>
+        <p>株式会社Edge Hub<br>代表取締役　越智 海翔</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="pp-footer">
+  <p class="pp-footer-copy">© Edge Hub Inc. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

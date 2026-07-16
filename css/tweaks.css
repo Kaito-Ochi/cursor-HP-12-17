@@ -1,0 +1,114 @@
+/* =============================================================
+   Edge Hub — Tweak variants
+   Three expressive controls that reshape the whole feel:
+     · Accent  → recolors the "marker" family (token-driven)
+     · Mood    → Light (paper) vs Cinematic (navy hero)
+     · Touch   → Editorial (hand-drawn) vs Minimal (crisp)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   ACCENT — route the marker family fully through --mark-yellow so
+   it can be recolored from one token. The hero-title underline was
+   a baked-yellow SVG; turn it into a recolorable mask.
+   --------------------------------------------------------------- */
+.hero-title .accent::after {
+  background: var(--mark-yellow);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24' preserveAspectRatio='none'%3E%3Cpath d='M4 15 C 50 7, 120 6, 170 11 C 220 16, 260 14, 296 8' fill='none' stroke='%23000' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24' preserveAspectRatio='none'%3E%3Cpath d='M4 15 C 50 7, 120 6, 170 11 C 220 16, 260 14, 296 8' fill='none' stroke='%23000' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+}
+.et-tag { background: color-mix(in srgb, var(--mark-yellow) 8%, transparent); }
+.et-tag:hover { background: color-mix(in srgb, var(--mark-yellow) 20%, transparent); }
+.photo-collage::after {
+  background: linear-gradient(90deg, transparent 0%, var(--mark-yellow) 35%, var(--mark-yellow) 72%, color-mix(in srgb, var(--mark-yellow) 18%, transparent) 100%);
+}
+
+/* ---------------------------------------------------------------
+   MOOD: CINEMATIC — the navy "depth" mode the design system
+   describes. Deep navy hero, radial fog, faint grid, glow.
+   --------------------------------------------------------------- */
+body.theme-cinematic .hero {
+  background:
+    radial-gradient(120% 90% at 78% 10%, rgba(47,107,255,0.18), transparent 60%),
+    radial-gradient(80% 70% at 8% 102%, rgba(47,107,255,0.10), transparent 55%),
+    linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
+}
+body.theme-cinematic .hero-bg {
+  background-image:
+    linear-gradient(var(--border-on-navy) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-on-navy) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(120% 80% at 58% 26%, #000 0%, transparent 74%);
+          mask-image: radial-gradient(120% 80% at 58% 26%, #000 0%, transparent 74%);
+  opacity: 0.55;
+}
+body.theme-cinematic .hero-title { color: var(--fg-on-navy); }
+body.theme-cinematic .hero-title .accent { color: var(--edge-400); }
+body.theme-cinematic .hero-lead p { color: var(--fg-on-navy-mut); }
+
+body.theme-cinematic .chip {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: var(--border-on-navy);
+  box-shadow: none;
+}
+body.theme-cinematic .chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(91, 139, 255, 0.55);
+  box-shadow: var(--shadow-glow);
+}
+body.theme-cinematic .chip .chip-label { color: var(--fg-on-navy); }
+body.theme-cinematic .chip .chip-ic { color: var(--edge-400); }
+
+body.theme-cinematic .btn-cta--ghost {
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--fg-on-navy);
+  border-color: var(--border-on-navy);
+}
+body.theme-cinematic .btn-cta--ghost:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--edge-400);
+}
+
+/* the illustration carries a white background — float it on a lit
+   panel so it reads as intentional on navy */
+body.theme-cinematic .hero-visual {
+  background: var(--paper-pure);
+  border-radius: var(--r-xl);
+  padding: clamp(14px, 2vw, 30px);
+  box-shadow: var(--shadow-navy-lift), var(--shadow-glow);
+  overflow: hidden;
+}
+body.theme-cinematic .hero-visual img { transform: scale(1.04); }
+
+/* ---------------------------------------------------------------
+   TOUCH: MINIMAL — strip the hand-drawn warmth for a crisp,
+   architectural corporate look: straight rules, no rotation,
+   no decorative accents.
+   --------------------------------------------------------------- */
+body.touch-minimal .hero-title .accent::after {
+  -webkit-mask: none;
+          mask: none;
+  background: var(--mark-yellow);
+  left: 0; right: 0;
+  bottom: -0.04em;
+  height: 0.1em;
+  border-radius: 2px;
+}
+body.touch-minimal .results-eyebrow::after {
+  height: 2px;
+  bottom: -3px;
+  opacity: 1;
+}
+body.touch-minimal .hero-lead .hl {
+  background: linear-gradient(transparent calc(100% - 2px), var(--mark-yellow) 0);
+  padding-inline: 0;
+}
+body.touch-minimal .results-title .mark {
+  background: linear-gradient(transparent calc(100% - 3px), var(--mark-yellow) 0);
+}
+body.touch-minimal .photo-collage .ph {
+  transform: none !important;
+  box-shadow: var(--shadow-md);
+}
+body.touch-minimal .photo-collage::before,
+body.touch-minimal .photo-collage::after { display: none; }
+body.touch-minimal .et-tag { border-radius: var(--r-sm); }
