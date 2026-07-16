@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ページが見つかりません — Edge Hub</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  @font-face {
+    font-family: "Noto Sans JP";
+    src: url("fonts/NotoSansJP-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Noto Sans JP";
+    src: url("fonts/NotoSansJP-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans JP", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background: #fff;
+    color: #101828;
+    padding: 24px;
+    text-align: center;
+  }
+  .logo { height: 48px; }
+  .code {
+    font-size: clamp(64px, 12vw, 120px);
+    font-weight: 700;
+    line-height: 1;
+    color: #1D2E6B;
+  }
+  .msg { font-size: 16px; color: #475467; }
+  .home {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: #1D2E6B;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity .2s;
+  }
+  .home:hover { opacity: .85; }
+</style>
+</head>
+<body>
+  <img class="logo" src="assets/edgehub-logo-full.png" alt="Edge Hub">
+  <div class="code">404</div>
+  <p class="msg">お探しのページは見つかりませんでした。<br>URLが変更されたか、削除された可能性があります。</p>
+  <a class="home" href="/">トップページへ戻る</a>
+</body>
+</html>
