@@ -1,0 +1,124 @@
+/* =============================================================
+   Edge Hub — 会社概要ページ
+   ============================================================= */
+
+/* ---------- HERO ---------- */
+.co-hero {
+  padding-top: calc(var(--header-h, 72px) + clamp(112px, 12vw, 190px));
+  padding-bottom: clamp(80px, 8vw, 130px);
+  background: var(--navy-900);
+}
+.co-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(1100px 520px at 82% -10%, rgba(47, 107, 255, 0.16), transparent 62%),
+    radial-gradient(900px 480px at 8% 110%, rgba(46, 74, 124, 0.35), transparent 60%),
+    var(--navy-900);
+}
+.co-hero-mark {
+  position: absolute;
+  right: clamp(-120px, -6vw, -40px);
+  bottom: -18%;
+  width: clamp(320px, 34vw, 560px);
+  opacity: 0.07;
+  transform: rotate(-6deg);
+  pointer-events: none;
+}
+.co-hero-eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-kicker);
+  letter-spacing: var(--tracking-kicker);
+  text-transform: uppercase;
+  color: var(--edge-300);
+}
+.co-hero h1 {
+  margin: 18px 0 0;
+  font-family: var(--font-jp);
+  font-weight: 800;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-on-navy);
+}
+.co-hero-lead {
+  margin: clamp(20px, 2.2vw, 30px) 0 0;
+  max-width: 38em;
+  font-family: var(--font-jp);
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  line-height: var(--lh-relaxed);
+  color: rgba(232, 239, 250, 0.92);
+}
+
+/* ---------- COMPANY INFO ---------- */
+.co-info {
+  background: var(--paper);
+  padding-block: clamp(80px, 9vw, 140px);
+}
+.co-kicker {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-kicker);
+  letter-spacing: var(--tracking-kicker);
+  text-transform: uppercase;
+  color: var(--edge-500);
+}
+.co-info h2 {
+  margin: 14px 0 0;
+  font-family: var(--font-jp);
+  font-weight: 800;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg);
+}
+.co-table {
+  margin-top: clamp(36px, 4vw, 56px);
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid var(--paper-line);
+}
+.co-table th,
+.co-table td {
+  padding: clamp(20px, 2.4vw, 30px) clamp(4px, 1vw, 16px);
+  border-bottom: 1px solid var(--paper-line);
+  text-align: left;
+  vertical-align: top;
+  font-family: var(--font-jp);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+}
+.co-table th {
+  width: clamp(140px, 18vw, 240px);
+  font-weight: 700;
+  color: var(--fg);
+  white-space: nowrap;
+}
+.co-table td { color: var(--fg-body); font-weight: 400; }
+.co-table td a { color: var(--link); }
+.co-table td a:hover { text-decoration: underline; }
+.co-biz-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.co-biz-list a {
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.co-biz-list a:hover { color: var(--edge-500); }
+.co-biz-list svg { width: 15px; height: 15px; color: var(--edge-500); flex: none; }
+
+@media (max-width: 640px) {
+  .co-table th, .co-table td { display: block; width: auto; }
+  .co-table th { border-bottom: none; padding-bottom: 6px; }
+  .co-table td { padding-top: 0; }
+}

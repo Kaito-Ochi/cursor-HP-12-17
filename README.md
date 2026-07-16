@@ -1,52 +1,34 @@
-# kaonavi universe Clone
+# Edge Hub コーポレートサイト
 
-[カオナビ人的資本サイト](https://universe.kaonavi.jp/)のクローンプロジェクトです。
+株式会社 Edge Hub のコーポレートサイト（静的HTML）。Claude Design で制作したデザインをそのまま配信しています。
 
-## 特徴
-
-- **スプラッシュスクリーン**: 宇宙テーマのローディングアニメーション
-- **パララックス効果**: マウス移動・スクロールに連動した多層パララックス
-- **宇宙ビジュアル**: 星空、惑星、ネビュラのアニメーション
-- **スクロールアニメーション**: セクションごとのフェードイン効果
-- **レスポンシブデザイン**: モバイル対応
-
-## ファイル構成
+## 構成
 
 ```
-├── index.html    # メインHTML
-├── styles.css    # スタイルシート
-├── script.js     # JavaScript（アニメーション制御）
-└── README.md     # このファイル
+├── index.html                    # トップページ
+├── 会社概要.html
+├── スケジュール.html
+├── ギャラリー.html
+├── AIX人材コミュニティ.html
+├── 対面型新卒採用イベント.html
+├── 採用マーケティング支援.html
+├── privacy-policy.html
+├── css/                          # スタイルシート
+├── js/motion.js                  # スクロールアニメーション
+├── image-slot.js                 # <image-slot> カスタム要素（画像表示に必須）
+├── .image-slots.state.json       # 画像スロットのデータ（data URL埋め込み・必須）
+├── assets/                       # 画像素材
+├── fonts/                        # Noto Sans JP
+└── uploads/                      # HTMLから参照される画像
 ```
 
-## 使用方法
+## デプロイ
 
-1. `index.html` をブラウザで開く
-2. または、ローカルサーバーで起動:
+- ビルド不要の静的サイト。push すると Vercel が自動デプロイする。
+- `image-slot.js` と `.image-slots.state.json` は一部画像の表示に必須のため削除しないこと。
+
+## ローカル確認
 
 ```bash
-# Python 3
-python -m http.server 8000
-
-# Node.js (npx)
-npx serve
+python3 -m http.server 8000
 ```
-
-## 使用フォント
-
-- **Orbitron**: 宇宙テーマのディスプレイフォント
-- **Zen Kaku Gothic New**: 日本語本文フォント
-- **Noto Sans JP**: フォールバック用日本語フォント
-
-## 技術スタック
-
-- HTML5
-- CSS3 (カスタムプロパティ、Grid、Flexbox、アニメーション)
-- Vanilla JavaScript (ES6+)
-- Google Fonts
-
-## ライセンス
-
-このプロジェクトはデモ目的で作成されています。
-オリジナルサイトの著作権は株式会社カオナビに帰属します。
-

@@ -1,0 +1,211 @@
+/* =============================================================
+   Edge Hub — Design Foundations
+   Colors, Type, Spacing, Radius, Shadow, Motion
+   株式会社Edge Hub  ·  対面型新卒採用イベント / 採用マーケティング支援 / AIX人材コミュニティ
+   ============================================================= */
+
+/* ---- Fonts -------------------------------------------------- */
+/* Brand JP face (uploaded by the user) — static weights 100–900 */
+@font-face { font-family: "Noto Sans JP"; src: url("../fonts/NotoSansJP-ExtraLight.ttf") format("truetype"); font-weight: 200; font-display: swap; }
+@font-face { font-family: "Noto Sans JP"; src: url("../fonts/NotoSansJP-Light.ttf") format("truetype");      font-weight: 300; font-display: swap; }
+@font-face { font-family: "Noto Sans JP"; src: url("../fonts/NotoSansJP-Regular.ttf") format("truetype");    font-weight: 400; font-display: swap; }
+@font-face { font-family: "Noto Sans JP"; src: url("../fonts/NotoSansJP-Medium.ttf") format("truetype");     font-weight: 500; font-display: swap; }
+@font-face { font-family: "Noto Sans JP"; src: url("../fonts/NotoSansJP-SemiBold.ttf") format("truetype");   font-weight: 600; font-display: swap; }
+@font-face { font-family: "Noto Sans JP"; src: url("../fonts/NotoSansJP-Bold.ttf") format("truetype");       font-weight: 700; font-display: swap; }
+@font-face { font-family: "Noto Sans JP"; src: url("../fonts/NotoSansJP-ExtraBold.ttf") format("truetype");  font-weight: 800; font-display: swap; }
+@font-face { font-family: "Noto Sans JP"; src: url("../fonts/NotoSansJP-Black.ttf") format("truetype");      font-weight: 900; font-display: swap; }
+
+/* Latin display + text + mono.
+   NOTE: these are SUBSTITUTES — the brand supplied no Latin font.
+   Schibsted Grotesk approximates the heavy geometric grotesque of the
+   "Edge Hub" wordmark; Geist Mono carries the technical / "AIX" voice. */
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* ===========================================================
+     COLOR — Navy is the hero. The logo runs from a deep core
+     (#051531) to a lit top edge (#2E4A7C). The scale below is
+     sampled & extended from that gradient.
+     =========================================================== */
+
+  /* Navy scale */
+  --navy-950: #050B18;
+  --navy-900: #081428;
+  --navy-850: #0A1B36;
+  --navy-800: #0E2348;   /* logo core face */
+  --navy-700: #12274E;   /* PRIMARY brand navy */
+  --navy-600: #1B3666;
+  --navy-500: #2E4A7C;   /* logo lit edge */
+  --navy-400: #4A689E;
+  --navy-300: #7C95C0;
+  --navy-200: #B4C3DE;
+  --navy-100: #DCE4F0;
+  --navy-50:  #EEF2F8;
+
+  /* Edge accent — a single luminous blue for links, focus rings,
+     and the cinematic "edge glow". Used sparingly. */
+  --edge-500: #2F6BFF;
+  --edge-400: #5B8BFF;
+  --edge-300: #93B2FF;
+  --edge-glow: rgba(47, 107, 255, 0.45);
+
+  /* Ink — the wordmark is pure black; we soften it a touch off-pure
+     for long-form reading, cool-tinted to sit with navy. */
+  --ink-900: #0B0E14;    /* headings / wordmark ink */
+  --ink-700: #2A2F3A;    /* body */
+  --ink-500: #565E6E;    /* secondary text */
+  --ink-400: #828A99;    /* muted / captions */
+  --ink-300: #AEB5C1;    /* disabled, hairline-on-light */
+
+  /* Paper — barely-warm off-white keeps the editorial, pretext-like
+     calm and avoids clinical pure-white. */
+  --paper:      #FBFAF7;
+  --paper-pure: #FFFFFF;
+  --paper-sink: #F3F2ED;   /* recessed panels on light */
+  --paper-line: #E7E5DD;   /* hairlines on light */
+
+  /* Semantic surface tokens */
+  --bg:            var(--paper);
+  --bg-elevated:   var(--paper-pure);
+  --bg-sunken:     var(--paper-sink);
+  --bg-inverse:    var(--navy-900);     /* dark / cinematic sections */
+  --bg-inverse-2:  var(--navy-950);
+
+  --fg:            var(--ink-900);
+  --fg-body:       var(--ink-700);
+  --fg-muted:      var(--ink-500);
+  --fg-faint:      var(--ink-400);
+  --fg-on-navy:    #EAF0FA;
+  --fg-on-navy-mut:#9DB0CF;
+
+  --border:        var(--paper-line);
+  --border-strong: var(--ink-300);
+  --border-on-navy: rgba(180, 195, 222, 0.16);
+
+  --link:          var(--edge-500);
+  --focus-ring:    var(--edge-500);
+
+  /* Status (kept cool & restrained to match brand) */
+  --ok:    #1F8A5B;
+  --warn:  #B5760B;
+  --error: #C2402F;
+
+  /* ===========================================================
+     TYPE
+     Latin display / text: Schibsted Grotesk (substitute)
+     Mono accents:         Geist Mono (substitute)
+     JP everything:        Noto Sans JP (brand, uploaded)
+     One stack covers both — JP face is appended so mixed JP/EN
+     lines render consistently.
+     =========================================================== */
+  --font-display: "Schibsted Grotesk", "Noto Sans JP", system-ui, sans-serif;
+  --font-text:    "Schibsted Grotesk", "Noto Sans JP", system-ui, sans-serif;
+  --font-jp:      "Noto Sans JP", "Schibsted Grotesk", system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Type scale — fluid, generous. Editorial spacing, big display. */
+  --fs-display:  clamp(3rem, 7vw, 6.5rem);   /* hero */
+  --fs-h1:       clamp(2.25rem, 4.5vw, 4rem);
+  --fs-h2:       clamp(1.75rem, 3vw, 2.75rem);
+  --fs-h3:       clamp(1.35rem, 2vw, 1.875rem);
+  --fs-h4:       1.25rem;
+  --fs-lead:     clamp(1.125rem, 1.4vw, 1.375rem);
+  --fs-body:     1.0625rem;
+  --fs-small:    0.9375rem;
+  --fs-caption:  0.8125rem;
+  --fs-kicker:   0.75rem;     /* mono eyebrow labels */
+
+  --lh-tight:   1.04;
+  --lh-snug:    1.18;
+  --lh-normal:  1.55;
+  --lh-relaxed: 1.72;
+
+  --tracking-display: -0.03em;
+  --tracking-tight:   -0.015em;
+  --tracking-normal:  0;
+  --tracking-kicker:  0.22em;   /* wide mono eyebrows */
+
+  /* ===========================================================
+     SPACING — 4px base, generous rhythm
+     =========================================================== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 192px;
+
+  --gutter: clamp(20px, 5vw, 88px);   /* page side padding */
+  --maxw:   1240px;                   /* content max width */
+  --maxw-text: 68ch;                  /* reading measure */
+
+  /* ===========================================================
+     RADIUS — restrained. Crisp, architectural, not pill-soft.
+     =========================================================== */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ===========================================================
+     SHADOW & ELEVATION — soft, cool-tinted, low-contrast on light.
+     On navy, depth is built with glow + inset edges, not drop shadow.
+     =========================================================== */
+  --shadow-xs: 0 1px 2px rgba(11, 14, 20, 0.06);
+  --shadow-sm: 0 2px 8px rgba(11, 14, 20, 0.06), 0 1px 2px rgba(11,14,20,0.04);
+  --shadow-md: 0 10px 30px -12px rgba(14, 35, 72, 0.18), 0 2px 8px rgba(11,14,20,0.05);
+  --shadow-lg: 0 28px 60px -20px rgba(14, 35, 72, 0.28), 0 8px 18px -10px rgba(11,14,20,0.10);
+  --shadow-glow: 0 0 0 1px rgba(47,107,255,0.4), 0 8px 40px -6px var(--edge-glow);
+  --shadow-navy-lift: 0 30px 80px -30px rgba(5, 11, 24, 0.7);
+
+  /* ===========================================================
+     MOTION — cinematic but disciplined. Long, eased, never bouncy.
+     =========================================================== */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);     /* primary — soft settle */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-edge: cubic-bezier(0.22, 0.61, 0.07, 1); /* dramatic decel for reveals */
+  --dur-fast:  160ms;
+  --dur-base:  320ms;
+  --dur-slow:  640ms;
+  --dur-reveal: 1000ms;   /* scroll reveal / cinematic */
+}
+
+/* =============================================================
+   SEMANTIC ELEMENT STYLES  (opt-in via .eh-prose or direct use)
+   ============================================================= */
+.eh-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--fg);
+}
+.eh-h1 { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-h1); line-height: var(--lh-tight); letter-spacing: var(--tracking-display); color: var(--fg); }
+.eh-h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h2); line-height: var(--lh-snug); letter-spacing: var(--tracking-tight); color: var(--fg); }
+.eh-h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h3); line-height: var(--lh-snug); letter-spacing: var(--tracking-tight); color: var(--fg); }
+.eh-h4 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h4); line-height: var(--lh-snug); color: var(--fg); }
+.eh-lead { font-family: var(--font-text); font-weight: 400; font-size: var(--fs-lead); line-height: var(--lh-relaxed); color: var(--fg-body); }
+.eh-body { font-family: var(--font-text); font-weight: 400; font-size: var(--fs-body); line-height: var(--lh-normal); color: var(--fg-body); }
+.eh-small { font-size: var(--fs-small); line-height: var(--lh-normal); color: var(--fg-muted); }
+.eh-caption { font-size: var(--fs-caption); line-height: var(--lh-normal); color: var(--fg-faint); }
+
+/* Mono eyebrow / kicker — the technical "AIX" voice */
+.eh-kicker {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-kicker);
+  letter-spacing: var(--tracking-kicker);
+  text-transform: uppercase;
+  color: var(--edge-500);
+}
+
+a { color: var(--link); text-decoration: none; }
+::selection { background: var(--edge-300); color: var(--navy-900); }

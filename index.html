@@ -1,476 +1,559 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edge Hub Inc. - Corporate Site</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Orbitron:wght@400;500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge Hub — 学生の本音を起点に、企業が選ばれる理由をつくる。</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/results.css">
+<link rel="stylesheet" href="css/services.css">
+<link rel="stylesheet" href="css/faq-cta-footer.css">
+<link rel="stylesheet" href="css/tweaks.css">
 </head>
-<body>
-    <!-- スプラッシュスクリーン -->
-    <div id="splash" class="splash">
-        <div class="splash-content">
-            <div class="splash-logo">
-                <img src="会社ロゴ　白文字.png" alt="Edge Hub Logo" class="splash-logo-img">
-            </div>
-            <div class="splash-text">
-                <span class="splash-letter">E</span>
-                <span class="splash-letter">d</span>
-                <span class="splash-letter">g</span>
-                <span class="splash-letter">e</span>
-                <span class="splash-space"></span>
-                <span class="splash-letter">H</span>
-                <span class="splash-letter">u</span>
-                <span class="splash-letter">b</span>
-                <span class="splash-space"></span>
-                <span class="splash-letter">I</span>
-                <span class="splash-letter">n</span>
-                <span class="splash-letter">c</span>
-                <span class="splash-letter">.</span>
-            </div>
-            <div class="splash-loader">
-                <div class="loader-bar"></div>
-                <div class="loader-rocket">
-                    <video autoplay loop muted playsinline class="rocket-video" preload="auto">
-                        <source src="Space%20Rocket_01_Blue.webm" type="video/webm">
-                        <source src="Space%20Rocket_01_Blue_1.mov" type='video/mp4; codecs="hvc1"'>
-                    </video>
-                    <img src="静止画スプラッシュスクリーンrocket.png" alt="Rocket" class="rocket-image-mobile">
-                </div>
-            </div>
+<body style="font-family: &quot;Noto Sans JP&quot;; font-size: 8px">
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="#" aria-label="Edge Hub ホーム">
+      <img class="brand-lockup" src="assets/edgehub-logo-full.png" alt="Edge Hub">
+    </a>
+
+    <nav class="main-nav" aria-label="メインナビゲーション">
+      <a href="会社概要.html">会社概要</a>
+      <div class="nav-svc"><a href="#services">サービス</a><div class="nav-svc-menu"><a href="対面型新卒採用イベント.html">対面型新卒採用イベント</a><a href="採用マーケティング支援.html">採用マーケティング支援</a><a href="AIX人材コミュニティ.html">AIX人材コミュニティ</a></div></div>
+      <a href="ギャラリー.html">ギャラリー</a>
+      <a href="スケジュール.html">スケジュール</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn-contact" href="#contact">
+        お問い合わせ
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        </span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="会社概要.html">会社概要</a>
+  <a href="#services">サービス</a>
+  <a href="ギャラリー.html">ギャラリー</a>
+  <a href="スケジュール.html">スケジュール</a>
+  <a href="#faq">よくある質問</a>
+  <a class="btn-contact" href="#contact" style="color: rgb(255, 255, 255)">
+    お問い合わせ
+    <span class="ic" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+    </span>
+  </a>
+</div>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" data-screen-label="ヒーロー">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <!-- Left: copy -->
+    <div class="hero-copy">
+      <h1 class="hero-title reveal">学生と出会い、<br><span class="accent" style="font-family: &quot;Noto Sans JP&quot;">選ばれる企業</span>になる。</h1>
+
+      <div class="hero-lead reveal reveal-d1">
+        <p style="font-weight: 700">Edge Hubは、対面型採用イベントを入口に、学生の本音・企業理解・志望度変化を可視化し、企業の採用活動を「集める採用」から「<span class="hl">選ばれる採用</span>」へ進化させる<span class="hl">会社</span>です。</p>
+        <p style="font-weight: 700">採用イベント、採用マーケティング支援、AIX人材コミュニティ運営を通じて、企業と学生のより良い出会いと、その先の採用成果を支援します。</p>
+      </div>
+
+      <div class="hero-chips reveal reveal-d2">
+        <div class="chip">
+          <span class="chip-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <span class="chip-label">対面型新卒採用<br>イベント</span>
         </div>
-        <div class="splash-stars"></div>
+        <div class="chip">
+          <span class="chip-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+          </span>
+          <span class="chip-label">採用マーケティング<br>支援</span>
+        </div>
+        <div class="chip">
+          <span class="chip-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v3.2M12 10.7 6.4 16.8M12 10.7l5.6 6.1"/></svg>
+          </span>
+          <span class="chip-label">AIX人材<br>コミュニティ</span>
+        </div>
+      </div>
+
+      <div class="hero-cta reveal reveal-d3">
+        <a class="btn-cta btn-cta--primary" href="#contact">
+          新卒採用イベントに相談する
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a class="btn-cta btn-cta--ghost" href="#contact">
+          サービス資料を問い合わせる
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
     </div>
 
-    <!-- メインコンテンツ -->
-    <div id="main-content" class="main-content hidden">
-        <!-- グローバル流れ星 -->
-        <div class="global-shooting-stars">
-            <div class="shooting-star ss-1"></div>
-            <div class="shooting-star ss-2"></div>
-            <div class="shooting-star ss-3"></div>
-            <div class="shooting-star ss-4"></div>
-            <div class="shooting-star ss-5"></div>
-            <div class="shooting-star ss-6"></div>
+    <!-- Right: illustration -->
+    <div class="hero-visual reveal reveal-d2">
+      <img src="assets/hero-illustration.png" alt="Edge Hub — データと人を繋ぐイメージビジュアル">
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RESULTS / 実績 ============================ -->
+<section class="results" id="results" data-screen-label="実績" style="background-color: rgb(255, 255, 255)">
+  <div class="results-inner">
+    <div class="results-grid">
+
+      <!-- Left: heading + lead + laurels -->
+      <div class="results-head">
+        <span class="results-eyebrow reveal" style="font-family: &quot;Noto Sans JP&quot;; font-weight: 700">数字で見る実績</span>
+        <h2 class="results-title reveal reveal-d1">毎回、次の<span class="mark">採用アクション</span>が<br>必ず生まれている。</h2>
+        <p class="results-lead reveal reveal-d1" style="font-weight: 600">50～100名規模の学生が集まる対面型イベントを、全国で継続開催。学生と企業が本音で出会い、毎回、数十件のマッチングや次の選考につながっています。</p>
+
+        <div class="laurels reveal reveal-d2">
+          <div class="laurel">
+            <img class="laurel-img" src="assets/crowns/kaisai2-r.png" alt="イベント開催数">
+            <div class="laurel-value">累計<b>20</b>回以上</div>
+          </div>
+          <div class="laurel">
+            <img class="laurel-img" src="assets/crowns/gakusei-r.png" alt="参加学生数">
+            <div class="laurel-value">累計<b>500</b>名以上</div>
+          </div>
+          <div class="laurel">
+            <img class="laurel-img" src="assets/crowns/kigyo-r.png" alt="参加企業数">
+            <div class="laurel-value">累計<b>30</b>社以上</div>
+          </div>
         </div>
-        
-        <!-- ナビゲーション -->
-        <nav class="nav">
-            <div class="nav-logo">
-                <img src="会社ロゴ　白文字.png" alt="Edge Hub" class="nav-logo-img">
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="メニュー">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <div class="nav-links" id="nav-links">
-                <!-- ハンバーガーメニュー用静止画 -->
-                <img src="ハンバーガー　静止画.png" alt="Menu" class="hamburger-menu-image">
-                <a href="#hero">TOP</a>
-                <a href="about.html">ABOUT US</a>
-                <a href="company.html">COMPANY</a>
-                <a href="#service">SERVICE</a>
-                <a href="#contact">CONTACT</a>
-            </div>
-        </nav>
+      </div>
 
-        <!-- ヒーローセクション -->
-        <section id="hero" class="hero">
-            <div class="hero-bg">
-                <div class="stars-layer stars-1"></div>
-                <div class="stars-layer stars-2"></div>
-                <div class="stars-layer stars-3"></div>
-                <div class="nebula"></div>
-            </div>
-            
-            <!-- 中央のペンローズ三角形 -->
-            <div class="penrose-container">
-                <img src="ペンローズ背景透過.png" alt="Penrose Triangle" class="penrose-image">
-                <div class="penrose-glow"></div>
-            </div>
-            
-            <!-- 背景の小惑星 -->
-            <div class="hero-planets">
-                <div class="hero-planet planet-1"></div>
-                <div class="hero-planet planet-2"></div>
-                <div class="hero-planet planet-3"></div>
-                <div class="hero-planet planet-4"></div>
-            </div>
-            
-            <!-- 右上寄りのコンテンツ -->
-            <div class="hero-content">
-                <p class="hero-subtitle">Recruitment with Accountability</p>
-                <h1 class="hero-title hero-title-nowrap">
-                    <span class="title-line">母集団形成から、</span>
-                    <span class="title-line">内定承諾のその瞬間まで。</span>
-                </h1>
-                <p class="hero-description">人と企業が出会う、そのすべてに真摯に向き合う。<br>点ではなく一本の線で、採用を成功へつなぐ。</p>
-            </div>
-            
-            <div class="scroll-indicator">
-                <span>scroll</span>
-                <div class="scroll-arrow"></div>
-            </div>
-            
-            <!-- セクション波線 -->
-            <div class="section-wave">
-                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
-                    <path class="wave-path wave-1" d="M0,100 C360,180 720,20 1080,100 C1260,140 1380,80 1440,100 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-2" d="M0,120 C320,40 640,160 960,80 C1200,20 1360,140 1440,100 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-3" d="M0,80 C400,160 800,40 1200,120 C1360,160 1420,100 1440,120 L1440,200 L0,200 Z"></path>
-                </svg>
-            </div>
-        </section>
+      <!-- Center: KPIs -->
+      <div class="kpi-area">
+        <div class="kpi-grid">
+          <div class="kpi reveal reveal-d1">
+            <div class="kpi-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="kpi-label">1回あたりの<br>参加学生数</div>
+            <div class="kpi-value">50～100<span class="unit">名</span></div>
+            <div class="kpi-note" style="font-weight: 600">意欲的な学生が多数参加</div>
+          </div>
+          <div class="kpi reveal reveal-d2">
+            <div class="kpi-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 0 5.66 0l4-4a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M13 7a4 4 0 0 0-5.66 0l-4 4a4 4 0 0 0 5.66 5.66l1-1"/></svg></div>
+            <div class="kpi-label">1回あたりの<br>マッチング数（平均）</div>
+            <div class="kpi-value">20～30<span class="unit">件</span></div>
+            <div class="kpi-note" style="font-weight: 600">面談・選考などの<br>Next Actionにつながる</div>
+          </div>
+          <div class="kpi reveal reveal-d2">
+            <div class="kpi-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+            <div class="kpi-label">イベント後の<br>面談着座率（平均）</div>
+            <div class="kpi-value">95<span class="unit">％以上</span></div>
+            <div class="kpi-note" style="font-weight: 600">高い着座率で<br>次の選考へ接続</div>
+          </div>
+          <div class="kpi reveal reveal-d3">
+            <div class="kpi-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+            <div class="kpi-label">イベント参加<br>企業満足度（平均）</div>
+            <div class="kpi-value">92<span class="unit">％以上</span></div>
+            <div class="kpi-note" style="font-weight: 600">多くの企業様に<br>ご満足いただいています</div>
+          </div>
 
-        <!-- Storyセクション -->
-        <section id="story" class="section story-section">
-            <div class="section-bg parallax-bg"></div>
-            
-            <!-- 星と光の装飾（画面全体） -->
-            <div class="story-decoration">
-                <!-- 星 -->
-                <div class="deco-star star-1"></div>
-                <div class="deco-star star-2"></div>
-                <div class="deco-star star-3"></div>
-                <div class="deco-star star-4"></div>
-                <div class="deco-star star-5"></div>
-                <div class="deco-star star-6"></div>
-                <div class="deco-star star-7"></div>
-                <div class="deco-star star-8"></div>
-                <!-- 光 -->
-                <div class="deco-light light-1"></div>
-                <div class="deco-light light-2"></div>
-                <div class="deco-light light-3"></div>
-                <div class="deco-light light-4"></div>
-                <!-- グロー -->
-                <div class="deco-glow glow-1"></div>
-                <div class="deco-glow glow-2"></div>
-                <div class="deco-glow glow-3"></div>
-                <!-- 小惑星 -->
-                <div class="deco-planet planet-small-1"></div>
-                <div class="deco-planet planet-small-2"></div>
-                <div class="deco-planet planet-small-3"></div>
+          <!-- Event-type tags -->
+          <div class="event-types reveal reveal-d3">
+            <div class="et-head"><span class="lab">イベント開催例</span><span class="rule"></span></div>
+            <div class="et-tags">
+              <span class="et-tag">就活EXPO</span>
+              <span class="et-tag">職種特化型イベント</span>
+              <span class="et-tag">業界特化型イベント</span>
+              <span class="et-tag">一社専属型イベント</span>
+              <span class="et-tag">少人数座談会</span>
             </div>
-            
-            <div class="section-content story-layout">
-                <!-- モバイル用静止画1：見出し横 -->
-                <img src="story%201%20静止画.png" alt="Story Image 1" class="story-mobile-image-1">
-                
-                <!-- モバイル用静止画2：セクション最後 -->
-                <img src="story%20２静止画.png" alt="Story Image 2" class="story-mobile-image-2">
-                
-                <!-- 左側：テキスト -->
-                <div class="story-left">
-                    <div class="section-header">
-                        <span class="section-label">Story</span>
-                        <h2 class="section-title scroll-reveal-text">
-                            モヤモヤをワクワクに。
-                        </h2>
-                    </div>
-                    <div class="story-text fade-in">
-                        <p>就職も、採用も。<br>
-                        本来は、もっとワクワクするものだと私たちは考えています。</p>
-                        
-                        <p>新しい環境に飛び込み、まだ見ぬ仲間と出会い、自分の可能性を試していく。<br>
-                        それは人生の中でも、数少ない"希望に満ちた選択"のはずです。</p>
-                        
-                        <p>けれど現実の日本の新卒市場は、そのワクワクを感じる前に、多くのモヤモヤを生んでいます。<br>
-                        学生は「大手かどうか」で判断せざるを得ず、企業は変化する市場に対し採用のアップデートが追いついていない。<br>
-                        知っているか、知らないかだけで選択肢が分かれてしまう——</p>
-                        
-                        <p>この市場には、構造的な歪みがあります。</p>
-                        
-                        <p>私たちは、その歪みを個人の問題だとは考えません。<br>
-                        <strong>問題は、仕組みそのものにある。</strong></p>
-                        
-                        <p>企業ごとにフェーズも文化も、目指す未来も違う。<br>
-                        であれば、採用の答えも一社一社違って当然です。</p>
-                        
-                        <p>母集団形成から選考、内定承諾までを一本の線で捉え、<br>
-                        企業にとって本当に必要な人材と、その人が心から納得して選べる採用を創っていく。</p>
-                        
-                        <p><strong>モヤモヤを、ワクワクに。</strong><br>
-                        就活と採用を「作業」ではなく、「未来を描く時間」に変える。</p>
-                        
-                        <p>それが、私たちがこの事業を続ける理由です。</p>
-                    </div>
-                </div>
-                
-                <!-- 右側：背景透過動画 -->
-                <div class="story-right fade-in">
-                    <div class="story-video-container">
-                        <video autoplay loop muted playsinline class="story-video" preload="auto">
-                            <source src="Space%20Shuttle%20v9%20-%20hd.webm" type="video/webm">
-                            <source src="Space%20Shuttle%20v9%20-%20hd%206_1.mov" type='video/mp4; codecs="hvc1"'>
-                            お使いのブラウザは動画再生に対応していません。
-                        </video>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- セクション波線 -->
-            <div class="section-wave wave-variant-2">
-                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
-                    <path class="wave-path wave-1" d="M0,60 C240,140 480,20 720,100 C960,180 1200,40 1440,80 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-2" d="M0,100 C360,20 720,160 1080,60 C1260,20 1380,100 1440,80 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-3" d="M0,140 C480,60 960,140 1440,100 L1440,200 L0,200 Z"></path>
-                </svg>
-            </div>
-        </section>
+          </div>
+        </div>
+      </div>
 
-        <!-- What is Edge Hub セクション -->
-        <section class="section universe-section">
-            <div class="universe-bg">
-                <div class="floating-particles"></div>
-            </div>
-            
-            <!-- モバイル用静止画 -->
-            <img src="whatisedgehub%3F.png" alt="What is Edge Hub" class="universe-mobile-image">
-            
-            <!-- 左側：背景透過動画 -->
-            <div class="universe-video-left">
-                <video autoplay loop muted playsinline class="universe-video" preload="auto">
-                    <source src="astro-rocket-animation-2025-10-17-00-16-28-utc%20(2).webm" type="video/webm">
-                    <source src="astro-rocket-animation-2025-10-17-00-16-28-utc%20(3)_1.mov" type='video/mp4; codecs="hvc1"'>
-                </video>
-            </div>
-            
-            <div class="section-content">
-                <div class="universe-header fade-in">
-                    <h2 class="universe-title scroll-reveal-text">What is<br>Edge Hub?</h2>
-                </div>
-                <div class="universe-description fade-in">
-                    <p>私たちは、人の個性には無限の可能性があると考えています。<br>
-                    一人ひとりが持つ価値は、決して型にはまるものではなく、<br>
-                    環境や出会いによって、いくらでも広がっていく。</p>
-                    
-                    <p>その姿を、私たちは宇宙に見立てました。<br>
-                    果てしなく広がり、未知に満ち、<br>
-                    まだ名前のついていない可能性が無数に存在する世界。</p>
-                    
-                    <p><strong>Edge Hubは、<br>
-                    その可能性が交差し、動き出す"起点"です。</strong></p>
-                </div>
-                
-                <div class="read-more-container fade-in">
-                    <a href="about.html" class="read-more-btn">
-                        <span>Read More</span>
-                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-                
-            </div>
-            
-            <!-- セクション波線 -->
-            <div class="section-wave wave-variant-3">
-                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
-                    <path class="wave-path wave-1" d="M0,120 C180,60 360,140 540,80 C720,20 900,160 1080,100 C1260,40 1380,120 1440,80 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-2" d="M0,80 C300,160 600,40 900,120 C1100,180 1300,60 1440,100 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-3" d="M0,100 C200,40 400,140 600,80 C800,20 1000,160 1200,100 C1350,60 1420,120 1440,100 L1440,200 L0,200 Z"></path>
-                </svg>
-            </div>
-        </section>
+      <!-- Right: photo collage -->
+      <div class="results-photos reveal reveal-d2">
+        <div class="photo-collage">
+          <div class="ph p2 poly"><image-slot id="ev-photo-2" fit="cover" src="assets/event-photo-tr.png" placeholder="面談風景②"></image-slot></div>
+          <div class="ph p3 poly"><image-slot id="ev-photo-3" fit="cover" placeholder="登壇・講演"></image-slot></div>
+          <div class="ph p4 rounded"><image-slot id="ev-photo-4" fit="cover" placeholder="集合写真"></image-slot></div>
+        </div>
+      </div>
 
-        <!-- Serviceセクション -->
-        <section id="service" class="section service-section">
-            <div class="section-bg parallax-bg"></div>
-            
-            <!-- モバイル用静止画 -->
-            <img src="serviceセクション静止画.png" alt="Service" class="service-mobile-image">
-            
-            <!-- 右側：背景透過動画 -->
-            <div class="service-video-right">
-                <video autoplay loop muted playsinline class="service-video" preload="auto">
-                    <source src="astronaut-do-multitasking-job-animation-2025-10-16-07-52-08-utc.webm" type="video/webm">
-                    <source src="astronaut-do-multitasking-job-animation-2025-10-16-07-52-08-utc%20(1)_1.mov" type='video/mp4; codecs="hvc1"'>
-                </video>
-            </div>
-            
-            <div class="section-content service-content-wide">
-                <div class="section-header service-header-center">
-                    <span class="section-label">Service</span>
-                    <h2 class="section-title scroll-reveal-text">事業内容</h2>
-                </div>
-                <div class="service-cards-row fade-in">
-                    <!-- 事業1 -->
-                    <div class="service-card">
-                        <div class="service-card-image">
-                            <img src="プラットフォーム.jpeg" alt="新卒マッチングイベント企画/運営">
-                        </div>
-                        <h3 class="service-card-title">新卒マッチングイベント企画/運営</h3>
-                        <p class="service-card-text">オンラインの「数」ではなく、対面の「確実な出会い」で決着をつける新卒採用。無機質なテキストマッチングではなく、必ず会い、必ず話すことを前提に企画・運営する新卒マッチングイベントです。イベントやワークを通じて人柄や温度感が自然に伝わり、企業も学生も「会ってから考える」フラットな出会いを実現。さらに行動データを活用し、出会いを再現可能な採用接点へと進化させます。</p>
-                    </div>
-                    <!-- 事業2 -->
-                    <div class="service-card">
-                        <div class="service-card-image">
-                            <img src="採用プロセス.jpeg" alt="採用プロセス診断">
-                        </div>
-                        <h3 class="service-card-title">採用プロセス診断</h3>
-                        <p class="service-card-text">なぜ惹かれないのか。なぜ離脱されるのか。その答えは、学生の"行動"の中にあります。応募から面接までの各フェーズで起きている行動データをもとに、採用プロセスの「詰まり」や「違和感」を可視化。感覚や経験則に頼らず、行動ログに基づいた改善レポートで、採用成果につながる最短ルートを描き出します。</p>
-                    </div>
-                    <!-- 事業3 -->
-                    <div class="service-card">
-                        <div class="service-card-image">
-                            <img src="採用代行.jpeg" alt="採用代行（RPO）/コンサル">
-                        </div>
-                        <h3 class="service-card-title">採用代行（RPO）/コンサル</h3>
-                        <p class="service-card-text">人事がいなくても、採用で負けない体制を。採用戦略の設計から実務運用まで、ひとつの採用部門として一気通貫で伴走します。選考設計や内定後フォロー、入社前研修まで踏み込み、内定辞退・早期離職・育成コストの課題を同時に抑制。採るだけで終わらせない、活躍と定着まで見据えた採用支援です。</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- セクション波線 -->
-            <div class="section-wave">
-                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
-                    <path class="wave-path wave-1" d="M0,80 C360,160 720,40 1080,120 C1260,180 1380,60 1440,100 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-2" d="M0,140 C240,60 480,180 720,100 C960,20 1200,140 1440,80 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-3" d="M0,100 C400,40 800,160 1200,80 C1380,40 1440,100 1440,100 L1440,200 L0,200 Z"></path>
-                </svg>
-            </div>
-        </section>
+    </div>
+  </div>
+</section>
 
-        <!-- 提携企業先セクション -->
-        <section id="company" class="section partners-section">
-            <!-- モバイル用静止画 -->
-            <img src="partnerセクション静止画.png" alt="Partner" class="partner-mobile-image">
-            
-            <!-- タイトルエリア -->
-            <div class="partners-header-area">
-                <span class="section-label">Partners</span>
-                <h2 class="partners-main-title">提携企業・団体様</h2>
-            </div>
-            
-            <!-- ロゴスクロールエリア -->
-            <div class="logo-scroll-container">
-                <div class="logo-scroll-track">
-                    <!-- 1セット目 -->
-                    <div class="logo-card">
-                        <img src="w.PNG" alt="Frontier" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="株式会社RIO ロゴ.png" alt="RIO" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="Y.PNG" alt="AI教育" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="recareer.png" alt="RE-CAREER" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="q.PNG" alt="DESIGNER Inc" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="らっくプラック　ロゴ.png" alt="らっくぷらっく" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="カチナビ　ロゴ.png" alt="カチナビ" class="partner-logo">
-                    </div>
-                    <!-- 2セット目（無限ループ用） -->
-                    <div class="logo-card">
-                        <img src="w.PNG" alt="Frontier" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="株式会社RIO ロゴ.png" alt="RIO" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="Y.PNG" alt="AI教育" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="recareer.png" alt="RE-CAREER" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="q.PNG" alt="DESIGNER Inc" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="らっくプラック　ロゴ.png" alt="らっくぷらっく" class="partner-logo">
-                    </div>
-                    <div class="logo-card">
-                        <img src="カチナビ　ロゴ.png" alt="カチナビ" class="partner-logo">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 説明テキスト -->
-            <div class="partners-footer-text">
-                <p>掲載許可いただいた企業様のみ掲載しております。</p>
-            </div>
-            
-            <!-- セクション波線 -->
-            <div class="section-wave wave-variant-2">
-                <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
-                    <path class="wave-path wave-1" d="M0,100 C200,40 400,160 600,100 C800,40 1000,160 1200,100 C1350,60 1440,120 1440,100 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-2" d="M0,60 C300,140 600,40 900,120 C1150,180 1350,60 1440,100 L1440,200 L0,200 Z"></path>
-                    <path class="wave-path wave-3" d="M0,120 C360,60 720,140 1080,80 C1280,40 1400,100 1440,80 L1440,200 L0,200 Z"></path>
-                </svg>
-            </div>
-        </section>
+<!-- ===================== PARTICIPATING COMPANIES ===================== -->
+<section class="companies" data-screen-label="参加企業一覧">
+  <div class="companies-inner">
+    <p class="companies-eyebrow reveal">Participating Companies</p>
+    <div class="companies-title reveal reveal-d1">
+      <span class="rule"></span>
+      <h2>参加企業一覧</h2>
+      <span class="rule"></span>
+    </div>
+    <p class="companies-lead reveal reveal-d1">多様な企業に、採用接点の場として活用されています。</p>
 
-        <!-- お問い合わせセクション -->
-        <section id="contact" class="section contact-section">
-            <div class="universe-bg">
-                <div class="floating-particles"></div>
-            </div>
-            
-            <!-- モバイル用静止画 -->
-            <img src="お問い合わせセクション静止画.png" alt="Contact" class="contact-mobile-image">
-            
-            <!-- 右側：背景透過動画 -->
-            <div class="contact-video-right">
-                <video autoplay loop muted playsinline class="contact-video" preload="auto">
-                    <source src="3d-robot-promotion-animation-transparent-backgroun-2025-10-16-09-45-27-utc%20(1).webm" type="video/webm">
-                    <source src="3d-robot-promotion-animation-transparent-backgroun-2025-10-16-09-45-27-utc%20(2)_1.mov" type='video/mp4; codecs="hvc1"'>
-                </video>
-            </div>
-            
-            <div class="section-content">
-                <div class="contact-header fade-in">
-                    <span class="section-label">Contact</span>
-                    <h2 class="section-title scroll-reveal-text">お問い合わせ</h2>
-                    <p class="contact-description">採用に関するご相談、サービスについてのお問い合わせは<br>下記よりお気軽にご連絡ください。</p>
-                </div>
-                <div class="read-more-container fade-in">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe2GjIQT_SpEZv3Rfr3lit8FlPfCZixRh3qxfFyLDkIku5e9A/viewform?usp=header" class="read-more-btn" target="_blank">
-                        <span>お問い合わせ</span>
-                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
+    <div class="logo-marquee reveal reveal-d2" aria-label="参加企業ロゴ">
+      <div class="marquee-row row-l">
+        <div class="marquee-track">
+          <div class="logo-item"><img src="assets/logo-t/01.png" alt="LINEヤフー"></div>
+          <div class="logo-item"><img src="assets/logo-t/04.png" alt="くら寿司"></div>
+          <div class="logo-item"><img src="assets/logo-t/alibaba.png" alt="Alibaba JAPAN"></div>
+          <div class="logo-item"><img src="assets/logo-t/ainico.png" alt="ainico group"></div>
+          <div class="logo-item"><img src="assets/logo-t/06.png" alt="RE-CAREER"></div>
+          <div class="logo-item"><img src="assets/logo-t/07.png" alt="柴屋"></div>
+          <div class="logo-item"><img src="assets/logo-t/11.png" alt="Frontier ホールディングス"></div>
+          <div class="logo-item"><img src="assets/logo-t/08.png" alt="能代電設工業"></div>
+          <div class="logo-item"><img src="assets/logo-t/09.png" alt="rocket now"></div>
+          <div class="logo-item"><img src="assets/logo-t/10.png" alt="KAYAMA CORPORATION"></div>
+          <div class="logo-item"><img src="assets/logo-t/24.png" alt="Remind"></div>
+          <div class="logo-item"><img src="assets/logo-t/23.png" alt="salesforce"></div>
+        </div>
+        <div class="marquee-track" aria-hidden="true">
+          <div class="logo-item"><img src="assets/logo-t/01.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/04.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/alibaba.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/ainico.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/06.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/07.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/11.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/08.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/09.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/10.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/24.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/23.png" alt=""></div>
+        </div>
+      </div>
+      <div class="marquee-row row-r">
+        <div class="marquee-track">
+          <div class="logo-item"><img src="assets/logo-t/05.png" alt="cliniphar"></div>
+          <div class="logo-item"><img src="assets/logo-t/12.png" alt="TC Career"></div>
+          <div class="logo-item"><img src="assets/logo-t/13.png" alt="SHOWA Co.,LTD."></div>
+          <div class="logo-item"><img src="assets/logo-t/14.png" alt="公益財団法人 大吉財団"></div>
+          <div class="logo-item"><img src="assets/logo-t/15.png" alt="RE-CAREER"></div>
+          <div class="logo-item"><img src="assets/logo-t/16.png" alt="First Brand"></div>
+          <div class="logo-item"><img src="assets/logo-t/17.png" alt="次世代AI教育株式会社"></div>
+          <div class="logo-item"><img src="assets/logo-t/18.png" alt="RIO"></div>
+          <div class="logo-item"><img src="assets/logo-t/19.png" alt="DESIGNER Inc"></div>
+          <div class="logo-item"><img src="assets/logo-t/22.png" alt="FUKUYA"></div>
+          <div class="logo-item"><img src="assets/logo-t/21.png" alt="舞昆のこうはら"></div>
+        </div>
+        <div class="marquee-track" aria-hidden="true">
+          <div class="logo-item"><img src="assets/logo-t/05.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/12.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/13.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/14.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/15.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/16.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/17.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/18.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/19.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/22.png" alt=""></div>
+          <div class="logo-item"><img src="assets/logo-t/21.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- フッター -->
-        <footer class="footer-new">
-            <!-- モバイル用静止画 -->
-            <img src="フッター　静止画.png" alt="Footer" class="footer-mobile-image">
-            
-            <div class="footer-container">
-                <div class="footer-main">
-                    <div class="footer-brand">
-                        <img src="会社ロゴ　白文字.png" alt="Edge Hub" class="footer-logo-new">
-                        <p class="footer-tagline">母集団形成から、内定承諾のその瞬間まで。</p>
-                    </div>
-                    <nav class="footer-nav">
-                        <a href="#hero">TOP</a>
-                        <a href="about.html">ABOUT US</a>
-                        <a href="company.html">COMPANY</a>
-                        <a href="#service">SERVICE</a>
-                        <a href="#contact">CONTACT</a>
-                    </nav>
-                </div>
-                <div class="footer-bottom">
-                    <p class="footer-copyright-new">© 2025 Edge Hub Inc. All Rights Reserved.</p>
-                </div>
-            </div>
-        </footer>
+<!-- ============================ SERVICES / サービス ============================ -->
+<section class="services" id="services" data-screen-label="サービス">
+  <div class="svc-bg" aria-hidden="true">
+    <div class="glass">
+      <span class="cube cube--glass cube-md"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+      <span class="cube cube--glass cube-lg"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+      <span class="cube cube--glass cube-sm"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+    </div>
+  </div>
+
+  <div class="services-inner">
+    <div class="services-grid">
+
+      <!-- Left: intro -->
+      <div class="svc-intro">
+        <span class="svc-eyebrow reveal">OUR SERVICES</span>
+        <h2 class="svc-title reveal reveal-d1">出会いをつくり、<br>採用を改善し、<br>人材活用までつなげる。</h2>
+        <span class="svc-rule reveal reveal-d1"></span>
+        <p class="svc-lead reveal reveal-d2">Edge Hubは、学生とのリアルな接点の起点に、イベント前の学生に対する調査・データ収集から、イベント当日の企画運営、さらにはイベント後の学生の反応やデータを活用した採用マーケティング支援まで、一気通貫で伴走いたします。</p>
+
+        <div class="svc-cubes" aria-hidden="true">
+          <span class="cube cube--navy cube-lg"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+          <span class="cube cube--yellow cube-sm"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+        </div>
+      </div>
+
+      <!-- Right: cards on podiums -->
+      <div class="svc-stage">
+        <div class="svc-cards" id="svcCards">
+          <div class="svc-slot">
+            <img class="svc-podium" src="assets/svc-podium.png" alt="" aria-hidden="true">
+            <article class="svc-card reveal reveal-d1">
+              <span class="cube cube--yellow card-cube" aria-hidden="true"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+              <div class="svc-card-num">01</div>
+              <h3 class="svc-card-title">対面型新卒採用イベント</h3>
+              <div class="svc-card-media"><image-slot id="svc-photo-1" fit="cover" src="assets/svc-photo-1.jpg" placeholder="対面イベント会場（学生×企業の面談）"></image-slot></div>
+              <a class="svc-readmore" href="対面型新卒採用イベント.html">READ MORE
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </article>
+          </div>
+
+          <div class="svc-slot">
+            <img class="svc-podium" src="assets/svc-podium.png" alt="" aria-hidden="true">
+            <article class="svc-card reveal reveal-d2">
+              <span class="cube cube--blue card-cube" aria-hidden="true"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+              <div class="svc-card-num">02</div>
+              <h3 class="svc-card-title">採用マーケティング支援</h3>
+              <div class="svc-card-media"><image-slot id="svc-photo-2" fit="cover" src="assets/svc-photo-2.png" placeholder="データ／ダッシュボード分析シーン"></image-slot></div>
+              <a class="svc-readmore" href="採用マーケティング支援.html">READ MORE
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </article>
+          </div>
+
+          <div class="svc-slot">
+            <img class="svc-podium" src="assets/svc-podium.png" alt="" aria-hidden="true">
+            <article class="svc-card reveal reveal-d3">
+              <span class="cube cube--blue card-cube" aria-hidden="true"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+              <div class="svc-card-num">03</div>
+              <h3 class="svc-card-title">AIX人材コミュニティ運営</h3>
+              <div class="svc-card-media"><image-slot id="svc-photo-3" fit="cover" src="assets/svc-photo-3.png" placeholder="AI・コミュニティ運営／会議シーン"></image-slot></div>
+              <a class="svc-readmore" href="AIX人材コミュニティ.html">READ MORE
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ / よくあるご質問 ============================ -->
+<section class="faq" id="faq" data-screen-label="よくある質問">
+  <div class="faq-bg" aria-hidden="true">
+    <span class="cube cube--glass cube-lg fbg-1"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+    <span class="cube cube--glass cube-md fbg-2"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+  </div>
+
+  <div class="faq-inner">
+    <div class="faq-head">
+      <span class="faq-eyebrow reveal">FAQ</span>
+      <h2 class="faq-title reveal reveal-d1">よくあるご質問</h2>
+      <span class="faq-rule reveal reveal-d1"></span>
     </div>
 
-    <script src="script.js"></script>
+    <div class="faq-grid">
+      <div class="faq-list reveal reveal-d2">
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q" aria-hidden="true">Q</span>
+            <span class="faq-q-text">どのような企業が参加できますか？</span>
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span>
+          </summary>
+          <div class="faq-a"><p>新卒採用・長期インターン採用に取り組む企業様であれば、業界や企業規模を問わずご相談いただけます。特に、学生との対面接点を増やしたい企業様、自社の魅力や仕事のリアルを学生に直接伝えたい企業様、採用母集団の質を高めたい企業様にご活用いただいています。</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q" aria-hidden="true">Q</span>
+            <span class="faq-q-text">採用イベントでは何をしてもらえますか？</span>
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span>
+          </summary>
+          <div class="faq-a"><p>企業ピッチ、少人数での座談会、学生との個別交流、イベント後の学生意向確認まで一貫して支援します。事前に参加学生の属性や関心を整理し、当日は学生ファシリテーターが対話を促進するため、単なる接触数ではなく、志望度形成や面談化につながる接点づくりが可能です。</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q" aria-hidden="true">Q</span>
+            <span class="faq-q-text">一社専属のイベントもできますか？</span>
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span>
+          </summary>
+          <div class="faq-a"><p>はい、可能です。企業様の採用ターゲットや職種理解の課題に合わせて、1社単独または少数社限定の座談会・説明会・1Day選考会などを設計できます。通常の合同型イベントよりも、仕事内容・社風・若手社員のリアルを深く伝えたい場合に適しています。</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q" aria-hidden="true">Q</span>
+            <span class="faq-q-text">イベント後の支援もありますか？</span>
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span>
+          </summary>
+          <div class="faq-a"><p>はい、イベント後のフォローまで対応しています。参加学生の志望度変化、印象に残ったポイント、不安点、面談意向を回収し、企業様ごとに次のアクションへつなげます。必要に応じて、学生への意向確認、個別面談の調整、接点維持のフォローも行います。</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q" aria-hidden="true">Q</span>
+            <span class="faq-q-text">採用マーケティング支援とは何ですか？</span>
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span>
+          </summary>
+          <div class="faq-a"><p>学生から見た企業イメージや、採用訴求の伝わり方を可視化し、企業様が「選ばれる理由」をつくるための支援です。イベントや学生ヒアリングで得た声をもとに、採用資料・説明会内容・SNS発信・候補者フォローの改善まで伴走します。単に学生を集めるだけでなく、志望度形成から内定承諾までを見据えた採用活動を設計します。</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q" aria-hidden="true">Q</span>
+            <span class="faq-q-text">AIX人材コミュニティとは何ですか？</span>
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span>
+          </summary>
+          <div class="faq-a"><p>AI・IT・DXに関心のある学生を集め、実務に近い経験を通じて育成するコミュニティです。学生はAIを学ぶだけでなく、リサーチ、資料作成、採用広報、営業支援、業務改善などの実践経験を積みます。企業様にとっては、AI活用に前向きな若手人材との早期接点や、学生チームによる業務支援の入口として活用できます。</p></div>
+        </details>
+
+      </div>
+
+      <div class="faq-visual reveal reveal-d2">
+        <image-slot id="faq-illustration" fit="contain" src="assets/faq-illustration.png" placeholder="3Dクエスチョンマークのイラスト（透過PNG）"></image-slot>
+        <span class="cube cube--blue cube-md cube-a" aria-hidden="true"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+        <span class="cube cube--yellow cube-sm cube-b" aria-hidden="true"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="cta" id="contact" data-screen-label="CTA">
+  <div class="cta-top">
+    <div class="cta-photo"><image-slot id="cta-photo-wide" fit="cover" src="assets/cta-hero-photo.png" placeholder="面談・商談の写真"></image-slot></div>
+    <div class="cta-inner">
+      <div class="cta-copy">
+        <p class="cta-kicker reveal">学生の可能性が、企業の未来をつくる。</p>
+        <h2 class="cta-title reveal">学生の本音から、<br>次の<span class="em">採用アクション</span>を<br>生み出しませんか？</h2>
+        <span class="cta-rule reveal reveal-d1" aria-hidden="true"></span>
+        <p class="cta-note reveal reveal-d1"><span class="cta-note-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>お気軽にお問い合わせください。</p>
+      </div>
+    </div>
+  </div>
+  <div class="cta-inner">
+    <div class="cta-actions reveal reveal-d2">
+      <a class="cta-card" href="https://docs.google.com/forms/d/e/1FAIpQLSe2GjIQT_SpEZv3Rfr3lit8FlPfCZixRh3qxfFyLDkIku5e9A/viewform?usp=dialog" target="_blank" rel="noopener"><span class="cta-card-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg></span><span class="cta-card-txt"><span class="cta-card-label">新卒採用イベントに申し込む</span><span class="cta-card-sub">学生と直接つながる機会をつくる</span></span><span class="cta-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>
+      <a class="cta-card" href="https://docs.google.com/forms/d/e/1FAIpQLSe2GjIQT_SpEZv3Rfr3lit8FlPfCZixRh3qxfFyLDkIku5e9A/viewform?usp=dialog" target="_blank" rel="noopener"><span class="cta-card-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><path d="M14 2v6h6"></path><path d="M16 13H8"></path><path d="M16 17H8"></path><path d="M10 9H8"></path></svg></span><span class="cta-card-txt"><span class="cta-card-label">サービス資料を請求する</span><span class="cta-card-sub">サービスの詳細や事例をご紹介</span></span><span class="cta-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>
+      <a class="cta-card" href="https://docs.google.com/forms/d/e/1FAIpQLSe2GjIQT_SpEZv3Rfr3lit8FlPfCZixRh3qxfFyLDkIku5e9A/viewform?usp=dialog" target="_blank" rel="noopener"><span class="cta-card-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span><span class="cta-card-txt"><span class="cta-card-label">お問い合わせする</span><span class="cta-card-sub">ご相談・ご質問はこちらから</span></span><span class="cta-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer" data-screen-label="フッター">
+  <div class="footer-bg" aria-hidden="true">
+    <span class="cube cube--glass cube-lg gbg-1"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+    <span class="cube cube--glass cube-md gbg-2"><i class="f-top"></i><i class="f-left"></i><i class="f-right"></i></span>
+  </div>
+
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/edgehub-logo-full.png" alt="Edge Hub">
+        <p>学生の本音を起点に、企業が選ばれる理由をつくる。対面型新卒採用イベント、採用マーケティング支援、AIX人材コミュニティを通じて、企業と学生のより良い出会いと、その先の採用成果を支援します。</p>
+      </div>
+
+      <nav class="footer-col" aria-label="サービス">
+        <h3>サービス</h3>
+        <ul>
+          <li><a href="対面型新卒採用イベント.html">対面型新卒採用イベント</a></li>
+          <li><a href="採用マーケティング支援.html">採用マーケティング支援</a></li>
+          <li><a href="AIX人材コミュニティ.html">AIX人材コミュニティ運営</a></li>
+          <li><a href="スケジュール.html#events">イベント一覧</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="企業情報">
+        <h3>企業情報</h3>
+        <ul>
+          <li><a href="会社概要.html">会社概要</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="コンテンツ">
+        <h3>コンテンツ</h3>
+        <ul>
+          <li><a href="ギャラリー.html">ギャラリー</a></li>
+          <li><a href="#faq">よくあるご質問</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="fc-label">お気軽にご相談ください</p>
+        <a class="fc-btn fc-btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe2GjIQT_SpEZv3Rfr3lit8FlPfCZixRh3qxfFyLDkIku5e9A/viewform?usp=dialog" target="_blank" rel="noopener">お問い合わせする
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <a class="fc-btn fc-btn--ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSe2GjIQT_SpEZv3Rfr3lit8FlPfCZixRh3qxfFyLDkIku5e9A/viewform?usp=dialog" target="_blank" rel="noopener">サービス資料を請求する
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="fb-inner">
+      <span class="fb-copy">© Edge Hub Inc. All Rights Reserved.</span>
+      <div class="fb-links">
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script>
+  // Header condense on scroll
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu toggle
+  const burger = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  const toggleMenu = (force) => {
+    const open = force ?? !burger.classList.contains('open');
+    burger.classList.toggle('open', open);
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  };
+  burger.addEventListener('click', () => toggleMenu());
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // FAQ accordion — only one open at a time
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) faqItems.forEach(other => { if (other !== item) other.open = false; });
+    });
+  });
+</script>
+
+<!-- ============================ TWEAKS ============================ -->
 </body>
 </html>
+
+<style id="__om-edit-overrides">
+:is(h1,h2,h3,h4,h5,h6) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { text-align: center !important }
+:is(h1,h2,h3,h4,h5,h6) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { text-align: left !important }
+:is(h1,h2,h3,h4,h5,h6) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { line-height: 1.3 !important }
+:is(h1,h2,h3,h4,h5,h6) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { line-height: 1 !important }
+:is(h1,h2,h3,h4,h5,h6) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { line-height: 1.5 !important }
+:is(h1,h2,h3,h4,h5,h6) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { line-height: 1.32 !important }
+</style>
