@@ -1,4 +1,26 @@
-# webサイト — プロジェクト方針
+# Edge Hub コーポレートサイト — プロジェクト方針
+
+## 公開・デプロイ運用（2026/07/17確立）
+
+- 公開URL: **https://edge-hub.net**（www は 308 で edge-hub.net へ転送）
+- 経路: このリポジトリの `main` に push → Vercel プロジェクト `ehhp` が自動デプロイ（1〜2分で本番反映）
+- **編集後のコミット＆pushは自動で行ってよい**（ユーザー承認済み・2026/07/17）。ただし：
+  - 軽微な修正（文言・画像・イベント追加）→ main へ直接 push
+  - 大きめの変更（ページ追加・デザイン変更）→ ブランチ + Vercel プレビューで確認後にマージ
+- コミットメッセージは日本語
+
+## 触ってはいけないファイル
+
+- `image-slot.js` と `image-slots.state.json` — `<image-slot>` 要素の画像表示に必須。
+  消すとトップの写真コラージュ等が表示されなくなる（画像データはstate.json内にdata URLで埋め込み）
+- メール関連のDNS（Squarespace側のTXT/MXレコード）はこのリポジトリ外だが、
+  ドメイン edge-hub.net は Google Workspace のメールと共用なので DNS 変更時は要注意
+
+## ページ追加時のチェックリスト
+
+- meta description / canonical / OGP タグを既存ページに倣って入れる（URLは https://edge-hub.net 基準）
+- `sitemap.xml` に URL を追加（日本語ファイル名はURLエンコード）
+- ナビゲーション・フッターのリンクを更新
 
 ## レイアウト方針（全ページ共通・今後作成するページも含む）
 
