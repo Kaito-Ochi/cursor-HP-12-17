@@ -537,7 +537,11 @@
     _applyView() {
       const g = this._geom();
       const fit = this.getAttribute('fit') || 'cover';
-      if (fit !== 'cover' || !g) {
+      // 手動トリミング（拡大・パン）が無いスロットはブラウザ標準の
+      // object-fit: cover に任せる。%計算はフレーム縦横比の変化時に
+      // 再計算が間に合わないとズレるが、object-fit は常に正確なため。
+      const identity = this._view.s === 1 && this._view.x === 0 && this._view.y === 0;
+      if (fit !== 'cover' || !g || (identity && !this.hasAttribute('data-reframe'))) {
         // Non-cover, or dimensions not known yet (before img load).
         this._img.style.width = '100%';
         this._img.style.height = '100%';

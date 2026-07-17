@@ -206,10 +206,15 @@ a { color: inherit; text-decoration: none; }
 /* ---- Left column ---- */
 .hero-copy { max-width: clamp(620px, 62vw, 880px); }
 
+.hero-copy { container-type: inline-size; }
+.hero-title .hero-line { white-space: nowrap; }
 .hero-title {
   font-family: var(--font-jp);
   font-weight: 900;
-  font-size: clamp(2.2rem, 5.2vw, 4.7rem);
+  /* 2行目「選ばれる企業になる。」(全角10文字) がコンテナ幅に必ず収まるサイズ。
+     cqw非対応ブラウザは前行のvw指定にフォールバック */
+  font-size: clamp(2.2rem, 4.6vw, 4.5rem);
+  font-size: clamp(2.2rem, 9.2cqw, 4.5rem);
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: var(--navy-700);
