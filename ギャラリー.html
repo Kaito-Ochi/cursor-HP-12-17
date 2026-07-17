@@ -209,8 +209,14 @@
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    entries.forEach(e => {
+      // 通常要素は12%表示で出現。縦に長い要素（モバイルのイベント一覧等）は
+      // 12%に達し得ないため、ビューポートの30%を占めた時点でも出現させる
+      if (e.isIntersecting && (e.intersectionRatio >= 0.12 || e.intersectionRect.height >= window.innerHeight * 0.3)) {
+        e.target.classList.add('in'); io.unobserve(e.target);
+      }
+    });
+  }, { threshold: [0, 0.03, 0.06, 0.09, 0.12], rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // YouTube embeds: autoplay muted (browser policy requires mute for autoplay)
